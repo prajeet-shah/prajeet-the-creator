@@ -59,8 +59,13 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-dark-950 pt-28 pb-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-dark-950 pt-28 pb-20 relative overflow-hidden animated-gradient grid-bg">
+      {/* Decorative blobs */}
+      <div className="blob w-96 h-96 bg-purple-600 top-20 -left-48 opacity-[0.08]" />
+      <div className="blob w-80 h-80 bg-emerald-500 bottom-20 -right-40 opacity-[0.08]" />
+      <div className="blob w-64 h-64 bg-rose-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06]" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

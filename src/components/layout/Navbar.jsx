@@ -61,7 +61,7 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold font-[family-name:var(--font-display)] gradient-text leading-tight">
+              <span className="text-lg font-bold font-[family-name:var(--font-display)] gradient-text-vibrant leading-tight">
                 Prajeet
               </span>
               <span className="text-[10px] text-dark-300 tracking-widest uppercase font-medium">

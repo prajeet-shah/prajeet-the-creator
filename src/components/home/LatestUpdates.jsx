@@ -17,8 +17,12 @@ export default function LatestUpdates() {
     .slice(0, 4);
 
   return (
-    <section className="relative py-24 bg-dark-900/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-gradient-to-b from-dark-950 via-emerald-950/20 to-dark-950 overflow-hidden grid-bg">
+      {/* Decorative blobs */}
+      <div className="blob w-96 h-96 bg-emerald-600/10 -top-20 -right-48" />
+      <div className="blob w-80 h-80 bg-teal-500/10 bottom-0 -left-40" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-4">
           <div>
@@ -26,7 +30,7 @@ export default function LatestUpdates() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-accent-500 tracking-wider uppercase mb-2"
+              className="inline-block text-sm font-semibold text-emerald-400 tracking-wider uppercase mb-2"
             >
               Latest Updates
             </motion.span>
@@ -37,12 +41,12 @@ export default function LatestUpdates() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl font-bold font-[family-name:var(--font-display)]"
             >
-              Stay <span className="gradient-text">Informed</span>
+              Stay <span className="gradient-text-emerald">Informed</span>
             </motion.h2>
           </div>
           <Link
             href="/updates"
-            className="text-sm text-primary-400 hover:text-primary-300 font-medium flex items-center gap-1 transition-colors group"
+            className="text-sm text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1 transition-colors group"
           >
             View all updates
             <svg
@@ -71,7 +75,7 @@ export default function LatestUpdates() {
               >
                 <Link
                   href={`/updates#${update.slug}`}
-                  className="block p-6 rounded-2xl border border-dark-800/50 bg-dark-800/30 hover:bg-dark-800/50 transition-all duration-300 card-hover group"
+                  className="block p-6 rounded-2xl border border-dark-800/50 bg-dark-800/30 hover:bg-emerald-500/5 hover:border-emerald-500/30 transition-all duration-300 card-hover group"
                 >
                   <div className="flex items-start gap-4">
                     {/* Type icon */}
@@ -93,7 +97,7 @@ export default function LatestUpdates() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-semibold text-white group-hover:text-primary-300 transition-colors mb-2 line-clamp-1">
+                      <h3 className="font-semibold text-white group-hover:text-emerald-400 transition-colors mb-2 line-clamp-1">
                         {update.title}
                       </h3>
 

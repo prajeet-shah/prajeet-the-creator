@@ -48,8 +48,12 @@ const cardVariants = {
 
 export default function WhatWeDo() {
   return (
-    <section className="relative py-24 bg-dark-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-dark-950/80 overflow-hidden">
+      {/* Subtle Background Elements */}
+      <div className="blob w-72 h-72 bg-blue-600/5 top-0 left-1/4" />
+      <div className="blob w-72 h-72 bg-indigo-600/5 bottom-0 right-1/4" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span

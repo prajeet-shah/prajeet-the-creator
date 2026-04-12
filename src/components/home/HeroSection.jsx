@@ -7,9 +7,9 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center animated-gradient grid-bg overflow-hidden">
       {/* Decorative blobs */}
-      <div className="blob w-96 h-96 bg-primary-600 top-20 -left-48" />
-      <div className="blob w-80 h-80 bg-accent-500 bottom-20 -right-40" />
-      <div className="blob w-64 h-64 bg-violet-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <div className="blob w-96 h-96 bg-purple-600 top-20 -left-48 opacity-[0.12]" />
+      <div className="blob w-80 h-80 bg-emerald-500 bottom-20 -right-40 opacity-[0.12]" />
+      <div className="blob w-64 h-64 bg-rose-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.1]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
         {/* Badge */}
@@ -32,7 +32,7 @@ export default function HeroSection() {
         >
           Your Complete Guide to Scholarships{" "}
           <br />
-          <span className="gradient-text">&</span>
+          <span className="gradient-text-vibrant">&</span>
           <br />
           <span className="text-dark-300"> Studying in India</span>
         </motion.h1>
@@ -58,7 +58,7 @@ export default function HeroSection() {
         >
           <Link
             href="/scholarships"
-            className="group relative px-8 py-4 bg-primary-600 hover:bg-primary-700 rounded-2xl text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-600/25 w-full sm:w-auto"
+            className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 rounded-2xl text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-500/30 w-full sm:w-auto"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               Explore Scholarships

@@ -96,6 +96,20 @@ body {
   background-clip: text;
 }
 
+.gradient-text-vibrant {
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f43f5e); /* purple -> pink -> rose */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #34d399, #059669); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* === GLOW EFFECTS === */
 
 .glow {
@@ -114,12 +128,13 @@ body {
   background: linear-gradient(
     -45deg,
     var(--color-dark-950),
-    var(--color-dark-900),
-    #0c1a3a,
+    #1b1338, /* Deep Violet */
+    #0a1f2c, /* Deep Teal */
+    #1a1025, /* Deep Plum */
     var(--color-dark-950)
   );
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 20s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
