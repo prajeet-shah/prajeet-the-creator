@@ -59,6 +59,22 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/logo.png" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Prajeet Shah",
+              "url": "https://prajeetthecreator.com",
+              "sameAs": [
+                "https://www.youtube.com/@prajeetthecreator",
+                "https://www.facebook.com/prajeetshah24",
+                "https://www.instagram.com/prajeetshah?igsh=N3BqcDRzZ3FicGFt"
+              ]
+            })
+          }}
+        />
       </head>
       <body className="antialiased">
         <Navbar />
