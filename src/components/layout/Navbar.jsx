@@ -25,6 +25,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -153,7 +154,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-96 mt-4" : "max-h-0"
+          className={`md:hidden transition-all duration-300 overflow-y-auto custom-scrollbar ${isOpen ? "max-h-[80vh] mt-4" : "max-h-0"
             }`}
         >
           <div className="glass rounded-2xl p-4 space-y-2 border border-white/10">
@@ -161,25 +162,40 @@ export default function Navbar() {
               <div key={link.label}>
                 {link.dropdown ? (
                   <div className="space-y-1">
-                    <div className="px-4 py-3 text-sm font-semibold text-dark-400 uppercase tracking-wider">{link.label}</div>
-                    <div className="pl-4 space-y-1">
-                      {link.dropdown.map(dropLink => (
-                        <Link
-                          key={dropLink.href}
-                          href={dropLink.href}
-                          className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${pathname === dropLink.href
-                            ? "text-primary-400 bg-primary-500/10"
-                            : "text-dark-300 hover:text-white hover:bg-dark-800"
-                          }`}
-                        >
-                          {dropLink.label}
-                        </Link>
-                      ))}
+                    <button
+                      onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                      className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-dark-400 uppercase tracking-wider hover:text-white transition-colors"
+                    >
+                      {link.label}
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180 text-white" : ""}`}
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div className={`overflow-hidden transition-all duration-300 ${activeDropdown === link.label ? "max-h-96" : "max-h-0"}`}>
+                      <div className="pl-4 space-y-1 pb-2">
+                        {link.dropdown.map(dropLink => (
+                          <Link
+                            key={dropLink.href}
+                            href={dropLink.href}
+                            onClick={() => setIsOpen(false)}
+                            className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${pathname === dropLink.href
+                              ? "text-primary-400 bg-primary-500/10"
+                              : "text-dark-300 hover:text-white hover:bg-dark-800"
+                            }`}
+                          >
+                            {dropLink.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ) : (
                   <Link
                     href={link.href}
+                    onClick={() => setIsOpen(false)}
                     className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 ${pathname === link.href
                       ? "text-primary-400 bg-primary-500/10"
                       : "text-white hover:bg-white/5"
