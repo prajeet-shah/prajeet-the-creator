@@ -114,6 +114,37 @@ export default function UpdatesPage() {
                   {update.content}
                 </p>
 
+                {/* Links */}
+                {update.links && update.links.filter(l => l.url && l.url !== "#").length > 0 && (
+                  <div className="flex flex-wrap gap-3 mb-6">
+                    {update.links
+                      .filter((link) => link.url && link.url !== "#")
+                      .map((link, idx) => (
+                      <a
+                        key={idx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 bg-dark-800 border border-dark-700 hover:border-primary-500/50 hover:bg-dark-700/50 rounded-xl text-xs font-medium transition-all group/link"
+                      >
+                        {link.type === "pdf" ? (
+                          <svg className="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
+                        ) : (
+                          <svg className="w-4 h-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        )}
+                        <span>{link.label}</span>
+                        <svg className="w-3 h-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </a>
+                    ))}
+                  </div>
+                )}
+
                 {/* Meta */}
                 <div className="flex items-center gap-4 text-xs text-dark-500">
                   <span className="flex items-center gap-1">

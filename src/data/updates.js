@@ -10,6 +10,9 @@ export const updates = [
     source: "ICCR A2A Portal",
     isPinned: false,
     publishedAt: "2026-02-27",
+    links: [
+      { label: "View Official Notice", url: "https://www.indembkathmandu.gov.in/storage/images/tabs/1694945.pdf", type: "pdf" }
+    ]
   },
   {
     id: 2,
@@ -22,6 +25,9 @@ export const updates = [
     source: "Study in India Portal",
     isPinned: false,
     publishedAt: "2026-02-15",
+    links: [
+      { label: "SII Portal", url: "https://studyinindia.gov.in/", type: "link" }
+    ]
   },
   {
     id: 3,
@@ -34,5 +40,8 @@ export const updates = [
     source: "ICCR Official Portal",
     isPinned: true,
     publishedAt: "2026-04-11",
+    links: [
+      { label: "Deadline Alert PDF", url: "", type: "pdf" }
+    ]
   },
 ];

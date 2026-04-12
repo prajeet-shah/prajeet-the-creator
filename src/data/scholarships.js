@@ -193,9 +193,9 @@ export const scholarships = [
     title: "Study in India (SII)",
     shortName: "SII",
     shortDescription:
-      "Government of India's flagship program for international students to study in India with fee waivers (100%, 50%, or 25%) across 900+ institutions and 8000+ courses.",
+      "Government of India's flagship program for international students to study in India across 900+ institutions and 8000+ courses.",
     category: "Partial to Full Funded",
-    deadline: "no deadline",
+    deadline: "NA",
     deadlineStatus: "open",
     coverColor: "from-orange-500 to-red-600",
     icon: "🇮🇳",
