@@ -66,6 +66,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Prajeet Shah",
+              "alternateName": "Prajeet the Creator",
               "url": "https://prajeetthecreator.com",
               "sameAs": [
                 "https://www.youtube.com/@prajeetthecreator",

@@ -2,5 +2,5 @@
 module.exports = {
   siteUrl: "https://prajeetthecreator.com",
   generateRobotsTxt: true,
-  generateIndexSitemap: false,
+  exclude: ["/robots.txt", "/sitemap.xml"],
 };
