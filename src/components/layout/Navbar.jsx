@@ -10,6 +10,16 @@ const navLinks = [
   { href: "/scholarships", label: "Scholarships" },
   { href: "/updates", label: "Updates" },
   { href: "/documents", label: "Documents" },
+  { 
+    label: "FAQs",
+    dropdown: [
+      { href: "/faqs/iccr-scholarship", label: "ICCR" },
+      { href: "/faqs/compex-scholarship", label: "COMPEX" },
+      { href: "/faqs/study-in-india-sii", label: "Study in India" },
+      { href: "/faqs/mahatma-gandhi-scholarship", label: "Mahatma Gandhi" },
+      { href: "/faqs/golden-jubilee-scholarship", label: "Golden Jubilee" }
+    ]
+  },
   { href: "/about", label: "About" },
 ];
 
@@ -53,7 +63,7 @@ export default function Navbar() {
               <span className="text-lg font-bold font-[family-name:var(--font-display)] gradient-text leading-tight">
                 Prajeet
               </span>
-              <span className="text-[10px] text-dark-400 tracking-widest uppercase">
+              <span className="text-[10px] text-dark-300 tracking-widest uppercase font-medium">
                 The Creator
               </span>
             </div>
@@ -62,19 +72,44 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${pathname === link.href
-                  ? "text-primary-400 bg-primary-500/10"
-                  : "text-dark-300 hover:text-white hover:bg-white/5"
-                  }`}
-              >
-                {link.label}
-                {pathname === link.href && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary-400" />
+              <div key={link.label} className="relative group">
+                {link.dropdown ? (
+                  <>
+                    <button className="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 text-dark-200 hover:text-white hover:bg-white/5 flex items-center gap-1">
+                      {link.label}
+                      <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div className="absolute top-full left-0 pt-2 w-56 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                      <div className="bg-dark-900 border border-dark-800 rounded-xl p-2 shadow-xl">
+                        {link.dropdown.map(dropLink => (
+                          <Link 
+                            key={dropLink.href} 
+                            href={dropLink.href}
+                            className={`block px-4 py-2 text-sm rounded-lg transition-colors ${pathname === dropLink.href ? "text-primary-400 bg-primary-500/10" : "text-dark-300 hover:text-white hover:bg-dark-800"}`}
+                          >
+                            {dropLink.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${pathname === link.href
+                      ? "text-primary-400 bg-primary-500/10"
+                      : "text-dark-200 hover:text-white hover:bg-white/5"
+                      }`}
+                  >
+                    {link.label}
+                    {pathname === link.href && (
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary-400" />
+                    )}
+                  </Link>
                 )}
-              </Link>
+              </div>
             ))}
           </div>
 
@@ -121,26 +156,47 @@ export default function Navbar() {
           className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-96 mt-4" : "max-h-0"
             }`}
         >
-          <div className="glass rounded-2xl p-4 space-y-1">
+          <div className="glass rounded-2xl p-4 space-y-2 border border-white/10">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${pathname === link.href
-                  ? "text-primary-400 bg-primary-500/10"
-                  : "text-dark-300 hover:text-white hover:bg-white/5"
-                  }`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.label}>
+                {link.dropdown ? (
+                  <div className="space-y-1">
+                    <div className="px-4 py-3 text-sm font-semibold text-dark-400 uppercase tracking-wider">{link.label}</div>
+                    <div className="pl-4 space-y-1">
+                      {link.dropdown.map(dropLink => (
+                        <Link
+                          key={dropLink.href}
+                          href={dropLink.href}
+                          className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${pathname === dropLink.href
+                            ? "text-primary-400 bg-primary-500/10"
+                            : "text-dark-300 hover:text-white hover:bg-dark-800"
+                          }`}
+                        >
+                          {dropLink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 ${pathname === link.href
+                      ? "text-primary-400 bg-primary-500/10"
+                      : "text-white hover:bg-white/5"
+                      }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
             ))}
             <a
-              href="https://youtube.com/@prajeetcreator"
+              href="https://youtube.com/@prajeetthecreator"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-3 bg-red-600 hover:bg-red-700 rounded-xl text-sm font-semibold transition-all mt-2"
+              className="flex items-center justify-center gap-2 px-4 py-3.5 bg-red-600 hover:bg-red-700 rounded-xl text-sm font-bold text-white transition-all mt-3 active:scale-95"
             >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
               </svg>
               Subscribe on YouTube

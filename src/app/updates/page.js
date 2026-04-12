@@ -110,7 +110,7 @@ export default function UpdatesPage() {
                 <h2 className="text-xl font-bold mb-3">{update.title}</h2>
 
                 {/* Content */}
-                <p className="text-dark-400 text-sm leading-relaxed mb-4">
+                <p className="text-dark-300 text-base leading-relaxed mb-4">
                   {update.content}
                 </p>
 
