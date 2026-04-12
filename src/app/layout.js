@@ -1,5 +1,6 @@
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -28,6 +29,9 @@ export const metadata = {
     "Prajeet the Creator",
     "scholarship application",
     "embassy updates",
+    "prajeet shah",
+    "prajeetshah"
+
   ],
   openGraph: {
     title: "Prajeet the Creator | Scholarship Guidance & Study in India",
@@ -54,11 +58,13 @@ export default function RootLayout({ children }) {
     <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
         <link rel="icon" href="/images/logo.png" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
       </head>
       <body className="antialiased">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
