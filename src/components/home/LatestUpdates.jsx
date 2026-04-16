@@ -5,10 +5,11 @@ import Link from "next/link";
 import { updates } from "@/data/updates";
 
 const typeConfig = {
-  announcement: { color: "bg-blue-500/20 text-blue-300", icon: "📢" },
-  embassy: { color: "bg-purple-500/20 text-purple-300", icon: "🏛️" },
-  result: { color: "bg-green-500/20 text-green-300", icon: "📊" },
-  deadline: { color: "bg-red-500/20 text-red-300", icon: "⏰" },
+  announcement: { color: "bg-blue-500/20 text-blue-300", icon: "📢", label: "Announcement" },
+  embassy: { color: "bg-purple-500/20 text-purple-300", icon: "🏛️", label: "Embassy" },
+  result: { color: "bg-green-500/20 text-green-300", icon: "📊", label: "Result" },
+  deadline: { color: "bg-red-500/20 text-red-300", icon: "⏰", label: "Deadline" },
+  message: { color: "bg-zinc-500/20 text-zinc-300", icon: "💬", label: "Message" },
 };
 
 export default function LatestUpdates() {
@@ -64,7 +65,7 @@ export default function LatestUpdates() {
         {/* Updates Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {latestUpdates.map((update, i) => {
-            const config = typeConfig[update.type] || typeConfig.announcement;
+            const config = typeConfig[update.type] || typeConfig.message;
             return (
               <motion.div
                 key={update.id}
@@ -72,23 +73,28 @@ export default function LatestUpdates() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
+                className="h-full"
               >
                 <Link
                   href={`/updates#${update.slug}`}
-                  className="block p-6 rounded-2xl border border-dark-800/50 bg-dark-800/30 hover:bg-emerald-500/5 hover:border-emerald-500/30 transition-all duration-300 card-hover group"
+                  className="block h-full min-h-[160px] p-6 rounded-2xl border border-dark-800/50 bg-dark-800/30 hover:bg-emerald-500/5 hover:border-emerald-500/30 transition-all duration-300 card-hover group"
                 >
                   <div className="flex items-start gap-4">
                     {/* Type icon */}
-                    <div className="text-2xl mt-1 flex-shrink-0">{config.icon}</div>
+                    {update.type !== "message" && (
+                      <div className="text-2xl mt-1 flex-shrink-0">{config.icon}</div>
+                    )}
 
                     <div className="flex-1 min-w-0">
                       {/* Tags */}
                       <div className="flex items-center gap-2 mb-2 flex-wrap">
-                        <span
-                          className={`tag ${config.color} text-xs`}
-                        >
-                          {update.type.charAt(0).toUpperCase() + update.type.slice(1)}
-                        </span>
+                        {update.type !== "message" && (
+                          <span
+                            className={`tag ${config.color} text-xs`}
+                          >
+                            {config.label}
+                          </span>
+                        )}
                         {update.isPinned && (
                           <span className="tag bg-accent-500/20 text-accent-300 text-xs">
                             📌 Pinned

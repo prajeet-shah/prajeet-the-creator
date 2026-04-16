@@ -32,6 +32,51 @@ export const faqsData = {
       question: "Can I apply to multiple ICCR scholarship schemes?",
       answer: "No, applicants should apply under only one scholarship scheme in a given academic session.",
     },
+    {
+      question: "Is a GMAT score compulsory for MBA students?",
+      answer:
+        "Yes, a GMAT score is generally required for MBA programs under the ICCR Scholarship, as per university requirements.",
+    },
+    {
+      question: "What documents are required for filling the ICCR Scholarship form?",
+      answer:
+        "You can check the detailed list of required documents in the scholarship section on this page. All documents are explained step by step for your convenience.",
+    },
+    {
+      question: "Can Class 12 appearing students apply for the ICCR Scholarship?",
+      answer:
+        "No, Class 12 appearing students are not eligible to apply. The final Class 12 result is mandatory at the time of application.",
+    },
+    {
+      question: "Can diploma students apply for the ICCR Scholarship?",
+      answer:
+        "No, diploma students are not eligible to apply. A Class 12 qualification is compulsory, and a diploma is not considered equivalent to Class 12 for this scholarship.",
+    },
+    {
+      question: "Are IELTS or TOEFL scores compulsory during the ICCR application?",
+      answer:
+        "No, IELTS or TOEFL scores are not mandatory ICCR scholarship applications.",
+    },
+    {
+      question: "How much money should I deposit in the bank for the ICCR Scholarship?",
+      answer:
+        "You need to deposit 400 (as per embassy instruction). Make sure to write your name and application number on the receipt, as it must be submitted to the Indian Embassy.",
+    },
+    {
+      question: "What documents need to be uploaded under English translation?",
+      answer:
+        "You must upload English translations of any documents that are not originally in English (for example, citizenship documents in Nepali). These translations can be prepared through a notary office. I have attached the format sample in document section",
+    },
+    {
+      question: "What should I upload as proof of English as a subject?",
+      answer:
+        "You need to provide proof that you studied English as a subject. For undergraduate applicants, this should be obtained from your Class 12 school/college. For postgraduate applicants, it should be from your bachelor’s institution. If English was not part of your bachelor’s program, you can use your Class 12 proof. You have to prepare it from college/university. I have attached the format sample in document section.",
+    },
+    {
+      question: "What is the chance of selection in the ICCR Scholarship?",
+      answer:
+        "There is no fixed or guaranteed selection percentage for the ICCR Scholarship. Selection depends on multiple factors such as academic performance, number of applicants, seat availability in chosen universities, competition level, quality of essay written, strength of supporting documents, and additional qualifications like IELTS/TOEFL (if applicable). The process involves both the Indian Embassy and the university, so results may vary each year.",
+    },
   ],
   "compex-scholarship": [
     {
@@ -92,6 +137,7 @@ export const faqsData = {
       question: "What should I do after reaching India?",
       answer: "After arriving in India, you must register on the FRRO portal within 14–15 days. This is mandatory for international students.",
     }
+
   ],
   "mahatma-gandhi-scholarship": [
     {

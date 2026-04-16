@@ -9,6 +9,7 @@ const typeConfig = {
   embassy: { color: "bg-purple-500/20 text-purple-300", icon: "🏛️", label: "Embassy" },
   result: { color: "bg-green-500/20 text-green-300", icon: "📊", label: "Result" },
   deadline: { color: "bg-red-500/20 text-red-300", icon: "⏰", label: "Deadline" },
+  message: { color: "bg-zinc-500/20 text-zinc-300", icon: "💬", label: "Message" },
 };
 
 const allTags = [
@@ -76,7 +77,7 @@ export default function UpdatesPage() {
         {/* Updates List */}
         <div className="space-y-4">
           {sortedUpdates.map((update, i) => {
-            const config = typeConfig[update.type] || typeConfig.announcement;
+            const config = typeConfig[update.type] || typeConfig.message;
             return (
               <motion.article
                 key={update.id}
@@ -88,9 +89,11 @@ export default function UpdatesPage() {
               >
                 {/* Type & Tags */}
                 <div className="flex items-center gap-2 mb-3 flex-wrap">
-                  <span className={`tag ${config.color} text-xs`}>
-                    {config.icon} {config.label}
-                  </span>
+                  {update.type !== "message" && (
+                    <span className={`tag ${config.color} text-xs`}>
+                      {config.icon} {config.label}
+                    </span>
+                  )}
                   {update.tags.map((tag) => (
                     <span
                       key={tag}
@@ -115,7 +118,7 @@ export default function UpdatesPage() {
                 </p>
 
                 {/* Links */}
-                {update.links && update.links.filter(l => l.url && l.url !== "#").length > 0 && (
+                {update.type !== "message" && update.links && update.links.filter(l => l.url && l.url !== "#").length > 0 && (
                   <div className="flex flex-wrap gap-3 mb-6">
                     {update.links
                       .filter((link) => link.url && link.url !== "#")

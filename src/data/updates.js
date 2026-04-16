@@ -5,7 +5,7 @@ export const updates = [
     title: "ICCR 2026-27 Scholarship Applications Open",
     content:
       "The ICCR A2A scholarship portal for the 2026-27 academic session is now open. Eligible international students can apply through the official portal. Applicants are strongly advised to complete their applications early and ensure all required documents are uploaded correctly to avoid last-minute issues.",
-    type: "announcement",
+    type: "message",
     tags: ["ICCR", "Application Open"],
     source: "ICCR A2A Portal",
     isPinned: false,
@@ -38,10 +38,23 @@ export const updates = [
     type: "deadline",
     tags: ["ICCR", "Deadline"],
     source: "ICCR Official Portal",
-    isPinned: true,
+    isPinned: false,
     publishedAt: "2026-04-11",
     links: [
       { label: "Deadline Alert PDF", url: "", type: "pdf" }
     ]
   },
+  {
+    id: 4,
+    slug: "iccr-deadline-extended-2026",
+    title: "ICCR Scholarship Deadline Extended to 22 April 2026",
+    content:
+      "The last date to submit applications for ICCR Scholarship Schemes (ABVGSS, SSSJSS, and LMD&MSS) has been officially extended till April 22, 2026. Students who have not yet applied should complete their application as soon as possible to avoid last-minute issues due to heavy traffic on the portal.",
+    type: "deadline",
+    tags: ["ICCR", "Deadline", "Extended"],
+    source: "ICCR Official Notification",
+    isPinned: true,
+    publishedAt: "2026-04-16",
+  }
+
 ];

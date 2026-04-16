@@ -7,7 +7,7 @@ export const scholarships = [
       "Indian Council for Cultural Relations (ICCR) offers fully funded scholarships for international students to study in Indian universities. Covers tuition, accommodation allowance, and monthly stipend.",
 
     category: "Fully Funded",
-    deadline: "April 15, 2026", // safer updated range
+    deadline: "April 22, 2026", // safer updated range
     deadlineStatus: "open",
 
     coverColor: "from-blue-600 to-indigo-700",
