@@ -20,7 +20,7 @@ export const updates = [
     title: "Study in India (SII) Portal Open for 2026 Admissions",
     content:
       "The Study in India (SII) portal is open for international students to explore courses and apply to Indian institutions.",
-    type: "announcement",
+    type: "message",
     tags: ["SII", "Admissions"],
     source: "Study in India Portal",
     isPinned: false,
@@ -35,7 +35,7 @@ export const updates = [
     title: "⚠️ ICCR Scholarship Deadline Approaching",
     content:
       "The expected last date to apply for the ICCR Scholarship 2026-27 is April 15, 2026. Due to heavy traffic near the deadline, students may experience slow portal performance. It is highly recommended to submit your application a few days before the deadline to avoid any issues.",
-    type: "deadline",
+    type: "message",
     tags: ["ICCR", "Deadline"],
     source: "ICCR Official Portal",
     isPinned: false,
@@ -50,11 +50,35 @@ export const updates = [
     title: "ICCR Scholarship Deadline Extended to 22 April 2026",
     content:
       "The last date to submit applications for ICCR Scholarship Schemes (ABVGSS, SSSJSS, and LMD&MSS) has been officially extended till April 22, 2026. Students who have not yet applied should complete their application as soon as possible to avoid last-minute issues due to heavy traffic on the portal.",
-    type: "deadline",
+    type: "message",
     tags: ["ICCR", "Deadline", "Extended"],
     source: "ICCR Official Notification",
-    isPinned: true,
+    isPinned: false,
     publishedAt: "2026-04-16",
+  },
+  {
+    id: 5,
+    slug: "ayush-scholarship-2026-open",
+    title: "AYUSH Scholarship 2026-27 Applications Open (Important Deadline)",
+    content:
+      "The AYUSH Scholarship 2026-27 applications are now open for Nepalese students under ICCR. The last date to apply online through the A2A portal is May 15, 2026. The document submission deadline is May 18, 2026; however, since May 16 and 17 are holidays, applicants are strongly advised to complete both application and document submission on or before May 15, 2026 to avoid rejection.",
+    type: "announcement",
+    tags: ["AYUSH", "ICCR", "Deadline"],
+    source: "Embassy of India, Kathmandu",
+    isPinned: true,
+    publishedAt: "2026-04-21",
+    links: [
+      {
+        label: "Official AYUSH Scholarship Notice",
+        url: "https://www.indembkathmandu.gov.in/storage/images/tabs/9126736.pdf",
+        type: "pdf"
+      },
+      {
+        label: "AYUSH Scholarship Application Link",
+        url: "https://a2ascholarships.iccr.gov.in",
+        type: "link"
+      }
+    ]
   }
 
 ];
