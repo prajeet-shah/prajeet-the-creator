@@ -8,7 +8,7 @@ export const scholarships = [
 
     category: "Fully Funded",
     deadline: "April 22, 2026", // safer updated range
-    deadlineStatus: "open",
+    deadlineStatus: "closed",
 
     coverColor: "from-blue-600 to-indigo-700",
     icon: "🎓",
@@ -292,5 +292,76 @@ export const scholarships = [
 
     officialLink: "http://www.goischolarship.com.np",
     youtubeVideoId: "Y9gNmCSjvEI"
+  },
+  {
+    slug: "saarc-hospitality-hotel-management-scholarship",
+    title: "SAARC Scholarship Scheme for B.Sc. (Hospitality & Hotel Management)",
+    shortName: "SAARC HHM",
+    shortDescription:
+      "The Embassy of India, Kathmandu offers the SAARC Scholarship Scheme for Nepalese students to pursue B.Sc. (Hospitality & Hotel Management) in affiliated Indian Institutes of Hotel Management (IHMs). The scholarship supports undergraduate studies in hospitality and hotel administration.",
+
+    category: "Scholarship",
+    deadline: "May 21, 2026",
+    deadlineStatus: "open",
+
+    coverColor: "from-orange-500 to-red-600",
+    icon: "🏨",
+
+    eligibility: [
+      "Must be a Nepalese citizen",
+      "Age should be 25 years or less as on July 1, 2026",
+      "Must have passed Class XII (+2)",
+      "Minimum 60% aggregate marks in Class XII",
+      "Minimum 50% marks in English in Class XII",
+      "Appearing candidates are NOT eligible",
+    ],
+
+    documents: [
+      "Completed application form",
+      "Latest passport-size photographs",
+      "Duly notarized final marksheet/transcript of Class XII",
+      "Copy of passport or citizenship certificate",
+      "English translation of citizenship/passport document certified by Notary Public",
+      "Original bank voucher of NRs. 400 application fee",
+      "All documents submitted in three sets",
+    ],
+
+    applicationSteps: [
+      "Download the application form from the Embassy of India, Kathmandu website",
+      "Fill or type the application form carefully",
+      "Prepare all required documents in three sets",
+      "Deposit NRs. 400 application fee in Nepal SBI Bank",
+      "Select at least four preferred Institutes from the official institute list",
+      "Submit the completed application via post, courier, or in person to the Education Wing, Embassy of India, Kathmandu",
+      "Ensure submission before May 21, 2026",
+    ],
+
+    commonMistakes: [
+      "Submitting incomplete application forms",
+      "Submitting non-notarized documents",
+      "Using photocopies of notarized documents",
+      "Not providing English translation of citizenship/passport documents",
+      "Submitting application after the deadline",
+      "Selecting too few institute preferences",
+      "Providing incorrect contact details",
+      "Applying through agents or consultants",
+    ],
+
+    benefits: [
+      "Opportunity to study Hospitality & Hotel Management in India",
+      "Admission to affiliated Institutes of Hotel Management (IHMs)",
+      "Access to multiple government-affiliated hospitality institutes across India",
+    ],
+
+    importantNotes: [
+      "Selection is based on academic record",
+      "Nomination by the Embassy does not guarantee admission",
+      "Change of institution after admission is not allowed",
+      "Applications through consultants or middlemen may be rejected",
+      "Applications received after May 21, 2026 will not be accepted",
+    ],
+
+    officialLink: "https://www.indembkathmandu.gov.in/",
+    youtubeVideoId: "",
   },
 ];
