@@ -56,30 +56,6 @@ export const updates = [
     isPinned: false,
     publishedAt: "2026-04-16",
   },
-  {
-    id: 5,
-    slug: "ayush-scholarship-2026-open",
-    title: "AYUSH Scholarship 2026-27 Applications Open (Important Deadline)",
-    content:
-      "The AYUSH Scholarship 2026-27 applications are now open for Nepalese students under ICCR. The last date to apply online through the A2A portal is May 15, 2026. The document submission deadline is May 18, 2026; however, since May 16 and 17 are holidays, applicants are strongly advised to complete both application and document submission on or before May 15, 2026 to avoid rejection.",
-    type: "message",
-    tags: ["AYUSH", "ICCR", "Deadline"],
-    source: "Embassy of India, Kathmandu",
-    isPinned: false,
-    publishedAt: "2026-04-21",
-    links: [
-      {
-        label: "Official AYUSH Scholarship Notice",
-        url: "https://www.indembkathmandu.gov.in/storage/images/tabs/9126736.pdf",
-        type: "pdf"
-      },
-      {
-        label: "AYUSH Scholarship Application Link",
-        url: "https://a2ascholarships.iccr.gov.in",
-        type: "link"
-      }
-    ]
-  },
 
   {
     id: 5,
@@ -112,10 +88,10 @@ export const updates = [
     title: "SAARC Scholarship 2026-27 Open for B.Sc. Hospitality & Hotel Management",
     content:
       "The Embassy of India, Kathmandu has invited applications from Nepalese students for the SAARC Scholarship Scheme 2026-27 for B.Sc. (Hospitality & Hotel Management) in Indian institutions. Applicants must be 25 years or below as on July 1, 2026, with minimum 60% aggregate marks and at least 50% marks in English in Class XII. The last date to submit applications is May 21, 2026. Students are advised to submit applications early and carefully select their preferred institutes from the official list provided by the Embassy.",
-    type: "announcement",
+    type: "message",
     tags: ["SAARC", "Hospitality", "Hotel Management", "Scholarship"],
     source: "Embassy of India, Kathmandu",
-    isPinned: true,
+    isPinned: false,
     publishedAt: "2026-05-16",
     links: [
       {
@@ -123,6 +99,7 @@ export const updates = [
         url: "https://www.indembkathmandu.gov.in/storage/images/tabs/2069498.pdf",
         type: "pdf"
       }
+
     ]
   }
 

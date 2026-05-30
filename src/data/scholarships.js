@@ -247,7 +247,7 @@ export const scholarships = [
       "Scholarship by the Embassy of India for Nepalese students pursuing undergraduate studies in Nepal. Provides annual financial assistance based on course type.",
     category: "Partial Funded",
     deadline: "November 2, 2025",
-    deadlineStatus: "closed",
+    deadlineStatus: "open",
     coverColor: "from-amber-500 to-yellow-600",
     icon: "🏆",
 
@@ -302,7 +302,7 @@ export const scholarships = [
 
     category: "Scholarship",
     deadline: "May 21, 2026",
-    deadlineStatus: "open",
+    deadlineStatus: "closed",
 
     coverColor: "from-orange-500 to-red-600",
     icon: "🏨",
@@ -363,5 +363,5 @@ export const scholarships = [
 
     officialLink: "https://www.indembkathmandu.gov.in/",
     youtubeVideoId: "",
-  },
+  }
 ];
