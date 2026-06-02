@@ -167,4 +167,26 @@ export const faqsData = {
       answer: "Yes, but only if the student passes each academic year and submits required documents like marksheets and promotion certificates."
     }
   ],
+  "homi-j-bhabha-scholarship": [
+    {
+      question: "What is the Homi J. Bhabha Scholarship (HJBSS)?",
+      answer: "The Dr. Homi J. Bhabha Scholarship Scheme (HJBSS) is a postgraduate scholarship offered by the Embassy of India, Kathmandu for Nepalese nationals to study M.E./M.Tech in India."
+    },
+    {
+      question: "Is the Homi J. Bhabha Scholarship fully funded?",
+      answer: "Yes, HJBSS is a supported Master's level engineering scholarship in India sponsored by the Government of India."
+    },
+    {
+      question: "Can appearing candidates apply for HJBSS?",
+      answer: "No, candidates awaiting final Bachelor's results are not eligible. A final graduation transcript must be submitted with the application."
+    },
+    {
+      question: "What is the age limit for HJBSS?",
+      answer: "Applicants must be 25 years or younger as of July 1, 2026."
+    },
+    {
+      question: "How many engineering branches should I choose?",
+      answer: "Applicants are advised to specify at least three branch choices on the application form."
+    }
+  ]
 };

@@ -8,6 +8,7 @@ const footerLinks = {
     { label: "Study in India", href: "/scholarships/study-in-india-sii" },
     { label: "Mahatma Gandhi", href: "/scholarships/mahatma-gandhi-scholarship" },
     { label: "Golden Jubilee", href: "/scholarships/golden-jubilee-scholarship" },
+    { label: "Homi J. Bhabha", href: "/scholarships/homi-j-bhabha-scholarship" },
   ],
   resources: [
     { label: "Updates & Alerts", href: "/updates" },

@@ -247,7 +247,7 @@ export const scholarships = [
       "Scholarship by the Embassy of India for Nepalese students pursuing undergraduate studies in Nepal. Provides annual financial assistance based on course type.",
     category: "Partial Funded",
     deadline: "November 2, 2025",
-    deadlineStatus: "open",
+    deadlineStatus: "closed",
     coverColor: "from-amber-500 to-yellow-600",
     icon: "🏆",
 
@@ -359,6 +359,61 @@ export const scholarships = [
       "Change of institution after admission is not allowed",
       "Applications through consultants or middlemen may be rejected",
       "Applications received after May 21, 2026 will not be accepted",
+    ],
+
+    officialLink: "https://www.indembkathmandu.gov.in/",
+    youtubeVideoId: "",
+  },
+  {
+    slug: "homi-j-bhabha-scholarship",
+    title: "Dr. Homi J. Bhabha Scholarship Scheme (HJBSS)",
+    shortName: "HJBSS",
+    shortDescription:
+      "The Dr. Homi J. Bhabha Scholarship Scheme (HJBSS) is offered by the Embassy of India, Kathmandu for Nepalese nationals to pursue Post-Graduate courses in engineering (M.E./M.Tech.) in Indian Universities/Institutions.",
+
+    category: "Scholarship",
+    deadline: "June 04, 2026",
+    deadlineStatus: "open",
+
+    coverColor: "from-sky-600 to-cyan-700",
+    icon: "⚛️",
+
+    eligibility: [
+      "Must be a Nepalese citizen",
+      "Age should be 25 years or less as of July 1, 2026",
+      "Must have passed Bachelor's level examination in Engineering (B.E./B.Tech)",
+      "Minimum 60% aggregate marks in B.E./B.Tech",
+      "Minimum 50% marks in English in Class XII (+2)",
+      "Appearing candidates are NOT eligible (final graduation transcripts are mandatory)",
+    ],
+
+    documents: [
+      "Completed and signed application form (downloaded from Embassy website)",
+      "Latest passport-size photographs (duly pasted on application form)",
+      "Duly notarized Final mark-sheet/transcript of Class XII",
+      "Duly notarized Final mark-sheet/transcript of Graduation (B.E./B.Tech)",
+      "Citizenship certificate (duly translated into English and certified by a Notary Public)",
+      "Original Bank Voucher of NRs. 400/-",
+    ],
+
+    applicationSteps: [
+      "Download the HJBSS application form from the official website: www.indembkathmandu.gov.in",
+      "Fill or type the application form carefully (separate form must be submitted for each course)",
+      "Provide at least three choices of engineering branches on the application form",
+      "Deposit the application fee of NRs. 400/- at any Nepal SBI Bank branch in favor of 'Education Wing, EoI, Kathmandu' (Account No. 17725240200331)",
+      "Prepare three (3) complete sets of the application form and required documents",
+      "Submit the applications in person (Monday to Friday, 10:30 am to 12:30 pm) or via post/courier to the Education Wing, Embassy of India, Kathmandu on or before June 04, 2026",
+    ],
+
+    commonMistakes: [
+      "Applying as an appearing candidate (final graduation marksheet must be submitted)",
+      "Providing fewer than three choices of engineering branches",
+      "Not submitting three (3) complete sets of documents",
+      "Submitting non-notarized or photocopy-only transcripts",
+      "Failing to translate the citizenship certificate into English by a certified Notary Public",
+      "Ignoring the application fee bank deposit or not submitting the original voucher",
+      "Using education consultants, middle-men, or agencies (will result in rejection)",
+      "Submitting applications after the deadline of June 04, 2026",
     ],
 
     officialLink: "https://www.indembkathmandu.gov.in/",

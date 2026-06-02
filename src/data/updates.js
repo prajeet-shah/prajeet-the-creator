@@ -101,6 +101,24 @@ export const updates = [
       }
 
     ]
+  },
+  {
+    id: 7,
+    slug: "homi-j-bhabha-scholarship-2026-open",
+    title: "Dr. Homi J. Bhabha Scholarship Scheme (HJBSS) 2026-27 Open",
+    content:
+      "Applications are invited from Nepalese nationals to study Post-Graduate courses in engineering (M.E./M.Tech.) in Indian Universities/Institutions under the Dr. Homi J. Bhabha Scholarship Scheme (HJBSS) for the academic year 2026-27. Eligible candidates must be 25 years or less as of July 1, 2026, with a minimum of 60% aggregate marks in B.E./B.Tech. and at least 50% marks in English in Class XII. The deadline for application submission is June 04, 2026. Note that appearing candidates are not eligible.",
+    type: "message",
+    tags: ["HJBSS", "Post-Graduate", "M.E.", "M.Tech.", "Scholarship"],
+    source: "Embassy of India, Kathmandu",
+    isPinned: true,
+    publishedAt: "2026-06-02",
+    links: [
+      {
+        label: "Official Scholarship Notice",
+        url: "https://www.indembkathmandu.gov.in/storage/press-release/2266051.pdf",
+        type: "pdf"
+      }
+    ]
   }
-
 ];

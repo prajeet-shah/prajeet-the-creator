@@ -17,7 +17,8 @@ const navLinks = [
       { href: "/faqs/compex-scholarship", label: "COMPEX" },
       { href: "/faqs/study-in-india-sii", label: "Study in India" },
       { href: "/faqs/mahatma-gandhi-scholarship", label: "Mahatma Gandhi" },
-      { href: "/faqs/golden-jubilee-scholarship", label: "Golden Jubilee" }
+      { href: "/faqs/golden-jubilee-scholarship", label: "Golden Jubilee" },
+      { href: "/faqs/homi-j-bhabha-scholarship", label: "Homi J. Bhabha" }
     ]
   },
   { href: "/about", label: "About" },
