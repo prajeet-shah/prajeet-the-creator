@@ -7,13 +7,13 @@ export const documentCategories = [
     samples: [
       {
         title: "English as a Subject - Sample 1",
-        image: "/images/english-as-subject-1.png",
+        image: "/images/english-as-subject-1.jpeg",
         description:
           "English as a subject document from the college/university",
       },
       {
         title: "English as a Subject - Sample 2",
-        image: "/images/english-as-subject-2.png",
+        image: "/images/english-as-subject-2.jpeg",
         description:
           "English as a subject document from the college/university",
       },
@@ -27,7 +27,7 @@ export const documentCategories = [
     samples: [
       {
         title: "Official Translation Format",
-        image: "/images/english-translation.png",
+        image: "/images/english-translation.jpeg",
         description:
           "Standard layout showing the original document beside its certified English translation.",
       },
@@ -41,13 +41,15 @@ export const documentCategories = [
     samples: [
       {
         title: "Physical Fitness Certificate 1st Page",
-        image: "/images/physical-fitness-certificate-iccr-scholarship-1st-page.jpg",
-        description: "First page of the physical fitness certificate containing the doctor's general evaluation and physical stats.",
+        image:
+          "/images/physical-fitness-certificate-iccr-scholarship-1st-page.jpg",
+        description: "",
       },
       {
         title: "Physical Fitness Certificate 2nd Page",
-        image: "/images/physical-fitness-certificate-iccr-scholarship-2nd-page.jpg",
-        description: "Second page of the physical fitness certificate containing detailed system checkups, vaccinations, and signatures.",
+        image:
+          "/images/physical-fitness-certificate-iccr-scholarship-2nd-page.jpg",
+        description: "",
       },
     ],
   },
