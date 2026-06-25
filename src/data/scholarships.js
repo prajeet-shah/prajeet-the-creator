@@ -43,7 +43,6 @@ export const scholarships = [
       "Select up to 5 university preferences (IMPORTANT UPDATE)",
       "Submit the application before deadline",
       "Submit all the uploaded documents to the Indian Embassy in your country",
-
     ],
 
     commonMistakes: [
@@ -55,8 +54,6 @@ export const scholarships = [
       "Not checking 'if applicable' fields correctly",
       "Ignoring embassy communication emails",
     ],
-
-
 
     officialLink: "https://a2ascholarships.iccr.gov.in/",
     youtubeVideoId: "buen7-ncQQA",
@@ -121,8 +118,6 @@ export const scholarships = [
       "Not having Study in India (SII) ID before applying",
     ],
 
-
-
     officialLink: "https://www.indembkathmandu.gov.in/",
     youtubeVideoId: "dOmZt63Meq4",
   },
@@ -180,8 +175,6 @@ export const scholarships = [
       "Not completing FRRO registration after arriving in India",
     ],
 
-
-
     officialLink: "https://studyinindia.gov.in/",
     youtubeVideoId: "Y7fe7T4HrL8",
   },
@@ -203,7 +196,7 @@ export const scholarships = [
       "Must have secured at least 60% aggregate marks in Class 10",
       "Must not be receiving any other scholarship",
       "Family annual income must be less than NPR 2,00,000",
-      "Age must be between 17 to 22 years as of July 1, 2026"
+      "Age must be between 17 to 22 years as of July 1, 2026",
     ],
 
     documents: [
@@ -213,7 +206,7 @@ export const scholarships = [
       "Income certificate issued by government authority",
       "Recent passport-size photograph",
       "Certificate stating not receiving any other scholarship",
-      "Disability certificate (if applicable)"
+      "Disability certificate (if applicable)",
     ],
 
     applicationSteps: [
@@ -222,7 +215,7 @@ export const scholarships = [
       "Fill out the online application form correctly",
       "Upload all required documents clearly",
       "Submit the form and download the acknowledgement receipt",
-      "Wait for further communication via registered email"
+      "Wait for further communication via registered email",
     ],
 
     commonMistakes: [
@@ -231,13 +224,11 @@ export const scholarships = [
       "Applying after the deadline (strictly not accepted)",
       "Using agents or consultants (applications will be rejected)",
       "Not saving email ID/password for future communication",
-      "Not generating acknowledgement receipt after submission"
+      "Not generating acknowledgement receipt after submission",
     ],
 
-
-
     officialLink: "http://www.goischolarship.com.np",
-    youtubeVideoId: "WSf4PzA2fJY"
+    youtubeVideoId: "WSf4PzA2fJY",
   },
   {
     slug: "golden-jubilee-scholarship",
@@ -257,7 +248,7 @@ export const scholarships = [
       "Must have secured at least 70% aggregate marks in Class 12 (excluding Class 11 marks)",
       "Must not be receiving any other scholarship",
       "Family annual income must be less than NPR 2,00,000",
-      "Age must be between 17 to 22 years as of July 1, 2026"
+      "Age must be between 17 to 22 years as of July 1, 2026",
     ],
 
     documents: [
@@ -267,7 +258,7 @@ export const scholarships = [
       "Income certificate issued by government authority",
       "Recent passport-size photograph",
       "Certificate stating not receiving any other scholarship",
-      "Disability certificate (if applicable)"
+      "Disability certificate (if applicable)",
     ],
 
     applicationSteps: [
@@ -276,7 +267,7 @@ export const scholarships = [
       "Fill out the online application form correctly",
       "Upload all required documents clearly",
       "Submit the form and download the acknowledgement receipt",
-      "Wait for further communication via registered email"
+      "Wait for further communication via registered email",
     ],
 
     commonMistakes: [
@@ -285,17 +276,16 @@ export const scholarships = [
       "Applying after the deadline",
       "Using agents or consultants (applications will be rejected)",
       "Not saving email ID/password for future communication",
-      "Not generating acknowledgement receipt after submission"
+      "Not generating acknowledgement receipt after submission",
     ],
 
-
-
     officialLink: "http://www.goischolarship.com.np",
-    youtubeVideoId: "Y9gNmCSjvEI"
+    youtubeVideoId: "Y9gNmCSjvEI",
   },
   {
     slug: "saarc-hospitality-hotel-management-scholarship",
-    title: "SAARC Scholarship Scheme for B.Sc. (Hospitality & Hotel Management)",
+    title:
+      "SAARC Scholarship Scheme for B.Sc. (Hospitality & Hotel Management)",
     shortName: "SAARC HHM",
     shortDescription:
       "The Embassy of India, Kathmandu offers the SAARC Scholarship Scheme for Nepalese students to pursue B.Sc. (Hospitality & Hotel Management) in affiliated Indian Institutes of Hotel Management (IHMs). The scholarship supports undergraduate studies in hospitality and hotel administration.",
@@ -373,7 +363,7 @@ export const scholarships = [
 
     category: "Scholarship",
     deadline: "June 04, 2026",
-    deadlineStatus: "open",
+    deadlineStatus: "closed",
 
     coverColor: "from-sky-600 to-cyan-700",
     icon: "⚛️",
@@ -418,5 +408,5 @@ export const scholarships = [
 
     officialLink: "https://www.indembkathmandu.gov.in/",
     youtubeVideoId: "",
-  }
+  },
 ];

@@ -25,7 +25,7 @@ export default function DocumentsPage() {
             Required <span className="gradient-text">Formats</span>
           </h1>
           <p className="text-dark-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-            Reference samples for English proficiency letters and translation formats for your scholarship application.
+            Reference samples for English proficiency letters, translation formats, and physical fitness certificates for your scholarship application.
           </p>
         </motion.div>
 

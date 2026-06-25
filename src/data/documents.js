@@ -8,12 +8,14 @@ export const documentCategories = [
       {
         title: "English as a Subject - Sample 1",
         image: "/images/english-as-subject-1.jpeg",
-        description: "English as a subject document from the college/university",
+        description:
+          "English as a subject document from the college/university",
       },
       {
         title: "English as a Subject - Sample 2",
         image: "/images/english-as-subject-2.jpeg",
-        description: "English as a subject document from the college/university",
+        description:
+          "English as a subject document from the college/university",
       },
     ],
   },
@@ -26,7 +28,28 @@ export const documentCategories = [
       {
         title: "Official Translation Format",
         image: "/images/english-translation.jpeg",
-        description: "Standard layout showing the original document beside its certified English translation.",
+        description:
+          "Standard layout showing the original document beside its certified English translation.",
+      },
+    ],
+  },
+  {
+    id: "physical-fitness",
+    title: "Physical Fitness Certificate",
+    icon: "🏥",
+    color: "from-red-500 to-rose-600",
+    samples: [
+      {
+        title: "Physical Fitness Certificate 1st Page",
+        image:
+          "/images/physical fitness certificate iccr scholarship 1st page.jfif",
+        description: "",
+      },
+      {
+        title: "Physical Fitness Certificate 2nd Page",
+        image:
+          "/images/physical fitness certificate iccr-scholarship 2nd page.jfif",
+        description: "",
       },
     ],
   },

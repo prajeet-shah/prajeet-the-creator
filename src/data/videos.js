@@ -9,9 +9,9 @@ export const featuredVideos = [
   },
   {
     id: 2,
-    title: "Documents required for filling the iccr scholarship form",
+    title: "Got ICCR Scholarship? Watch This Before Coming to India | NIT Surathkal Student Podcast",
     description: "",
-    youtubeId: "HMlrzcTmWQ0",
+    youtubeId: "2sDBr_dP0NY",
     thumbnail: "",
     category: "",
   },
@@ -25,9 +25,9 @@ export const featuredVideos = [
   },
   {
     id: 4,
-    title: "English as a subject for iccr scholarship 2026",
+    title: "How to Prepare for IOE Entrance 2083 | Complete Roadmap",
     description: "",
-    youtubeId: "zwoc2SNBAWA",
+    youtubeId: "l0hXogMs0d0",
     thumbnail: "",
     category: "",
   },

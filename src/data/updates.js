@@ -11,8 +11,12 @@ export const updates = [
     isPinned: false,
     publishedAt: "2026-02-27",
     links: [
-      { label: "View Official Notice", url: "https://www.indembkathmandu.gov.in/storage/images/tabs/1694945.pdf", type: "pdf" }
-    ]
+      {
+        label: "View Official Notice",
+        url: "https://www.indembkathmandu.gov.in/storage/images/tabs/1694945.pdf",
+        type: "pdf",
+      },
+    ],
   },
   {
     id: 2,
@@ -26,8 +30,12 @@ export const updates = [
     isPinned: false,
     publishedAt: "2026-02-15",
     links: [
-      { label: "SII Portal", url: "https://studyinindia.gov.in/", type: "link" }
-    ]
+      {
+        label: "SII Portal",
+        url: "https://studyinindia.gov.in/",
+        type: "link",
+      },
+    ],
   },
   {
     id: 3,
@@ -40,9 +48,7 @@ export const updates = [
     source: "ICCR Official Portal",
     isPinned: false,
     publishedAt: "2026-04-11",
-    links: [
-      { label: "Deadline Alert PDF", url: "", type: "pdf" }
-    ]
+    links: [{ label: "Deadline Alert PDF", url: "", type: "pdf" }],
   },
   {
     id: 4,
@@ -72,20 +78,21 @@ export const updates = [
       {
         label: "Official AYUSH Scholarship Notice",
         url: "https://www.indembkathmandu.gov.in/storage/images/tabs/9126736.pdf",
-        type: "pdf"
+        type: "pdf",
       },
       {
         label: "AYUSH Scholarship Application Link",
         url: "https://a2ascholarships.iccr.gov.in",
-        type: "link"
-      }
-    ]
+        type: "link",
+      },
+    ],
   },
 
   {
     id: 6,
     slug: "saarc-hospitality-scholarship-2026-open",
-    title: "SAARC Scholarship 2026-27 Open for B.Sc. Hospitality & Hotel Management",
+    title:
+      "SAARC Scholarship 2026-27 Open for B.Sc. Hospitality & Hotel Management",
     content:
       "The Embassy of India, Kathmandu has invited applications from Nepalese students for the SAARC Scholarship Scheme 2026-27 for B.Sc. (Hospitality & Hotel Management) in Indian institutions. Applicants must be 25 years or below as on July 1, 2026, with minimum 60% aggregate marks and at least 50% marks in English in Class XII. The last date to submit applications is May 21, 2026. Students are advised to submit applications early and carefully select their preferred institutes from the official list provided by the Embassy.",
     type: "message",
@@ -97,10 +104,9 @@ export const updates = [
       {
         label: "Official SAARC Scholarship Notice",
         url: "https://www.indembkathmandu.gov.in/storage/images/tabs/2069498.pdf",
-        type: "pdf"
-      }
-
-    ]
+        type: "pdf",
+      },
+    ],
   },
   {
     id: 7,
@@ -111,14 +117,26 @@ export const updates = [
     type: "message",
     tags: ["HJBSS", "Post-Graduate", "M.E.", "M.Tech.", "Scholarship"],
     source: "Embassy of India, Kathmandu",
-    isPinned: true,
+    isPinned: false,
     publishedAt: "2026-06-02",
     links: [
       {
         label: "Official Scholarship Notice",
         url: "https://www.indembkathmandu.gov.in/storage/press-release/2266051.pdf",
-        type: "pdf"
-      }
-    ]
-  }
+        type: "pdf",
+      },
+    ],
+  },
+  {
+    id: 8,
+    slug: "iccr-scholarship-result-update-2026",
+    title: "ICCR Scholarship Result Update 📢🎓",
+    content:
+      "Attention all applicants! The ICCR scholarship results are coming. Please make sure to keep checking your registered email regularly so you don't miss any important updates.\n✅ Facing any doubts or queries?\n✅ Running into any issues during the process?\nFeel free to reach out to me",
+    type: "result",
+    tags: ["ICCR", "Result", "Scholarship"],
+    source: "ICCR Portal",
+    isPinned: true,
+    publishedAt: "2026-06-25",
+  },
 ];
