@@ -96,6 +96,7 @@ export default function DocumentsPage() {
                       fill
                       className="object-contain relative z-10"
                       loading="lazy"
+                      unoptimized
                     />
                   </div>
                   
