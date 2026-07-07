@@ -191,6 +191,34 @@ export const faqsData = {
       question: "What happens if I submit incorrect information in my application?",
       answer: "Submitting incorrect information can lead to forfeiture of admission or the scholarship at any stage of the process, even after selection or placement, so all details must be filled in carefully and accurately.",
     },
+    {
+      question: "I passed my 10+2 through the CBSE (India) board instead of a Nepali board — is there any extra requirement?",
+      answer: "Yes. If your qualifying exam is equivalent to the 10+2 CBSE standard in India rather than a Nepali board, you must produce an equivalence certificate in addition to meeting the standard eligibility criteria.",
+    },
+    {
+      question: "Are NITs available under COMPEX without a JEE Mains score?",
+      answer: "Yes, NITs are included in the COMPEX university list, and you can apply to NITs without a JEE Mains score. However, this isn't true for every NIT — JEE is required for admission to some specific NIT colleges. A detailed list of which NITs don't require JEE will be shared separately, so keep checking for updates.",
+    },
+    {
+      question: "Is JEE necessary to apply through COMPEX?",
+      answer: "JEE (Main/Advanced) is necessary only for admission into IITs and some specific NIT colleges under the COMPEX scheme. It is not required for all the colleges available in the COMPEX university list — most other institutes can be applied to without a JEE score.",
+    },
+    {
+      question: "Is a calculator provided during the COMPEX exam, or can I bring my own?",
+      answer: "No. Calculators are not provided at the exam center, and candidates are not permitted to bring their own calculator either.",
+    },
+    {
+      question: "When document verification happens at the embassy after selection, do I need the original Class XII marksheet, a notarized copy, a percentage-conversion certificate, or all of them?",
+      answer: "You need to carry the original documents to the embassy for verification — not just notarized copies. If your board issues grades instead of direct percentages, carry the percentage-conversion document as well, since original documents are what the embassy asks for at this stage.",
+    },
+    {
+      question: "After my COMPEX result comes and a college accepts me, how soon do I need to join the college?",
+      answer: "There's no fixed universal number of days — the process works like this: first, visit the Embassy of India kathmandu for document verification. After that's done, email the concerned college to ask about the exact date by which you need to report/join. The college will confirm the joining timeline directly with you.",
+    },
+    {
+      question: "Can CTEVT diploma/certificate students apply for the COMPEX scholarship?",
+      answer: "No. COMPEX eligibility is fixed at Class XII (10+2) or the equivalent 10+2 CBSE standard, with specific subject-percentage requirements — a CTEVT Diploma or Certificate is not a recognized qualifying credential for COMPEX. CTEVT-level students have their own separate scholarship system (e.g., the CTEVT Classified Scholarship for Diploma/Certificate programs), which is run entirely by CTEVT with its own eligibility (based on SEE/SLC results), application process, and funding — it is completely independent of COMPEX and the Indian Embassy. One exception: if a student completed their Class XII first and later also did a CTEVT diploma, they may still apply for COMPEX using their original Class XII marks, since it's the diploma qualification itself that isn't accepted — not necessarily the student's entire academic history.",
+    },
   ],
   "study-in-india-sii": [
     {
