@@ -81,8 +81,6 @@ export const scholarships = [
       "For Engineering: Minimum 60% in Physics, Chemistry, Mathematics (PCM)",
       "For other courses: Minimum 55% in Physics, Chemistry, Biology (PCB)",
       "Must have completed or appearing in Class 12 (10+2 equivalent)",
-      "Must have valid Study in India (SII) ID",
-      "For IIT/NIT/IIIT: JEE Main/Advanced qualification required",
     ],
 
     documents: [
@@ -90,7 +88,6 @@ export const scholarships = [
       "Citizenship certificate (Nepal)",
       "Recent passport-size photograph",
       "Signature (scanned)",
-      "Study in India (SII) ID",
       "Valid email ID and mobile number",
       "School certificate for appearing candidates (if results not declared)",
       "Bank challan copy (after fee payment)",
