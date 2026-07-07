@@ -80,20 +80,116 @@ export const faqsData = {
   ],
   "compex-scholarship": [
     {
-      question: "What is COMPEX Scholarship?",
-      answer: "COMPEX is a scholarship provided by the Embassy of India, Kathmandu for Nepalese students to study undergraduate courses in India through a competitive entrance exam.",
+      question: "What is COMPEX?",
+      answer: "COMPEX (Competitive Examination) is a scholarship scheme run by the Embassy of India, Kathmandu, that gives Nepali students the opportunity to study undergraduate courses in India through a qualifying/competitive Computer Based Test (CBT).",
     },
     {
-      question: "Is COMPEX fully funded?",
-      answer: "Yes, it generally covers tuition fees, hostel accommodation, and provides a monthly stipend, but final benefits depend on the allocated institution.",
+      question: "Who conducts the COMPEX examination?",
+      answer: "The examination is conducted by the Education Wing of the Embassy of India, Kathmandu, and candidates apply through the official website www.indembkathmandu.gov.in.",
     },
     {
-      question: "Is there any entrance exam?",
-      answer: "Yes, selection is based on a Computer-Based Test (CBT) conducted by the Embassy of India.",
+      question: "Which courses can I apply for under COMPEX?",
+      answer: "You can apply for BE/B.Tech, B.Sc. (Agriculture), B.Sc. (Food Technology), B.Sc. (Nursing), and B. Pharmacy.",
     },
     {
-      question: "Can I apply for multiple courses?",
-      answer: "Yes, you can apply for a maximum of two courses only.",
+      question: "Can I apply for more than one course?",
+      answer: "Yes, but a candidate can apply for a maximum of two courses only, subject to meeting the eligibility criteria for each.",
+    },
+    {
+      question: "What is the eligibility criterion for BE/B.Tech?",
+      answer: "You need at least 60% marks in aggregate, 50% in English, and at least 60% in each of Physics, Chemistry, and Mathematics in Class XII (or the equivalent 10+2 CBSE standard).",
+    },
+    {
+      question: "What is the eligibility criterion for B.Sc. Agriculture, B. Pharmacy, B.Sc. Food Technology, and B.Sc. Nursing?",
+      answer: "You need at least 60% marks in aggregate, 50% in English, and at least 55% in each of Physics, Chemistry, and Biology in Class XII (or the equivalent 10+2 CBSE standard).",
+    },
+    {
+      question: "Are Class XI marks considered for eligibility?",
+      answer: "No. Only Class XII (10+2) marks are considered; Class XI marks are not included.",
+    },
+    {
+      question: "What is the age limit to apply for COMPEX?",
+      answer: "The minimum age to apply is 16 years and the maximum age is 23 years, calculated as of the cutoff date specified in that year's official notification.",
+    },
+    {
+      question: "Can I apply if my Class XII results haven't been published yet?",
+      answer: "Yes. Candidates appearing in the 10+2/Class XII examination may apply in anticipation of their results, but a certificate from the school Principal confirming they are appearing for the exam must be uploaded, and the results must be submitted later.",
+    },
+    {
+      question: "How do I apply for COMPEX?",
+      answer: "Applications are submitted online in three steps: Step 1 (Registration), Step 2 (Filling and submitting the application), and Step 3 (Filling in bank challan details and uploading the scanned challan).",
+    },
+    {
+      question: "What happens after I register in Step 1?",
+      answer: "After registering with your name, mobile number, and email ID, you will receive a Login ID and Password on your registered email, which you use to proceed to Step 2.",
+    },
+    {
+      question: "Can I edit my application after submitting it?",
+      answer: "No. Once the application is submitted in Step 2, no changes or edits are allowed. Corrections can only be made through the Preview option before final submission.",
+    },
+    {
+      question: "What is the application fee, and how do I pay it?",
+      answer: "The application fee is NPR 400, payable at any branch of Nepal SBI Bank using the bank challan generated after Step 2.",
+    },
+    {
+      question: "Is the application fee refundable?",
+      answer: "No. Once deposited, the application fee is not refunded or adjusted under any circumstances.",
+    },
+    {
+      question: "What should I do if my payment isn't confirmed on the website?",
+      answer: "If your payment isn't reflected 48 hours after depositing the fee, you should fill out the Grievance Redressal form with your details and email it, along with a scanned copy of the paid challan, to the official COMPEX helpdesk email.",
+    },
+    {
+      question: "How many institutes/colleges can I select in my application?",
+      answer: "Candidates have to choose up to four institutes, in order of preference, from the list provided in the online application form. This preference order cannot be changed once submitted.",
+    },
+    {
+      question: "What subjects are covered in the COMPEX exam?",
+      answer: "The exam typically covers English, Physics, and Chemistry (EPC) as a combined paper, along with separate papers in Mathematics and/or Biology, depending on the course applied for.",
+    },
+    {
+      question: "When and where is the exam held?",
+      answer: "The Computer Based Test is generally held in Kathmandu at designated exam centers announced by the Embassy.",
+    },
+    {
+      question: "How do I get my admit card?",
+      answer: "Admit cards are released online, typically 3-5 days before the exam date, and the download link is sent to the registered email address of eligible candidates.",
+    },
+    {
+      question: "What documents do I need to carry to the exam center?",
+      answer: "You must carry a printout of the e-Admit Card along with an original ID proof (Passport or Nepal Citizenship Card). No candidate is permitted entry without these.",
+    },
+    {
+      question: "What is the reporting time on exam day?",
+      answer: "Candidates must reach the exam center at least 90 minutes before the scheduled start time to complete entry formalities and mandatory security checks.",
+    },
+    {
+      question: "Does selection in COMPEX guarantee admission to an Indian college?",
+      answer: "No. Nomination by the Embassy does not guarantee admission. Final confirmation of admission depends on acceptance by the concerned Indian university/institution.",
+    },
+    {
+      question: "Can I use an agent or education consultant to apply?",
+      answer: "No. The Embassy of India only accepts applications submitted directly by the candidate. Applications routed through consultants, agents, or middlemen are liable to be rejected.",
+    },
+    {
+      question: "Who do I contact if I face problems while filling out the application?",
+      answer: "You can contact the official COMPEX Help Desk via email during working hours (typically 10 AM to 5 PM) for any difficulty related to the online application process.",
+    },
+    {
+      question: "Can a Diploma in Pharmacy (or other diploma) holder apply for COMPEX?",
+      answer: "No. COMPEX eligibility is based strictly on Class XII (10+2) marks, not on diploma qualifications. A Diploma in Pharmacy or any other diploma is not recognized as a qualifying credential under the scheme — there is no diploma-based or lateral-entry category. If a candidate has completed a diploma after Class XII, they may still be eligible only if their original Class XII marks meet the required percentages for the course they're applying to; the diploma itself does not count toward eligibility.",
+    },
+    {
+      question: "Is COMPEX open only to Nepali citizens?",
+      answer: "Yes. The scholarship scheme is open only to Nepalese Nationals, and preference is given to candidates who have completed their school studies in Nepal.",
+    },
+    {
+      question: "Can I request a change of college, institute, or university after I've been placed?",
+      answer: "No. Once a candidate is placed, requests to change the college/institution/university, or to transfer the scholarship, are not entertained under any circumstances.",
+    },
+    {
+      question: "What happens if I submit incorrect information in my application?",
+      answer: "Submitting incorrect information can lead to forfeiture of admission or the scholarship at any stage of the process, even after selection or placement, so all details must be filled in carefully and accurately.",
     },
   ],
   "study-in-india-sii": [
