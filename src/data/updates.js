@@ -133,10 +133,22 @@ export const updates = [
     title: "ICCR Scholarship Result Update 📢🎓",
     content:
       "Attention all applicants! The ICCR scholarship results are coming. Please make sure to keep checking your registered email regularly so you don't miss any important updates.\n✅ Facing any doubts or queries?\n✅ Running into any issues during the process?\nFeel free to reach out to me",
-    type: "result",
+    type: "message",
     tags: ["ICCR", "Result", "Scholarship"],
     source: "ICCR Portal",
-    isPinned: true,
+    isPinned: false,
     publishedAt: "2026-06-25",
+  },
+  {
+    id: 9,
+    slug: "iccr-scholarship-result-declared-2026-27",
+    title: "Result of ICCR Scholarship Schemes: 2026-27 🎉📢",
+    content:
+      "The results for the ICCR Scholarship Schemes 2026-27 have been officially declared.\n\nSelected candidates under the Atal Bihari Vajpayee General Scholarship Scheme (ABVGSS), Sushma Swaraj Silver Jubilee Scholarship Scheme (SSSJSS), and Lata Mangeshkar Dance & Music Scholarship Scheme (LMDMSS) have already been informed via email by the Embassy.\n\n📧 All applicants are advised to check their registered email inbox, including the Spam/Junk folder, for the official result notification.",
+    type: "announcement",
+    tags: ["ICCR", "Scholarship", "Result", "ABVGSS", "SSSJSS", "LMDMSS"],
+    source: "ICCR",
+    isPinned: true,
+    publishedAt: "2026-07-10",
   },
 ];

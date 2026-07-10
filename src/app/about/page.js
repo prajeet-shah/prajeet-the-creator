@@ -6,27 +6,27 @@ import Image from "next/image";
 const milestones = [
   {
     year: "The Beginning",
-    title: "Started the Journey",
+    title: "Started Helping Students",
     description:
-      "Began as a software engineer with a passion for helping students navigate the complex world of scholarships and education abroad.",
+      "I started my journey with a simple mission—to help students find genuine scholarship opportunities and guide them through the application process. Through YouTube, I began sharing educational content, application guides, and important updates.",
   },
   {
-    year: "YouTube",
-    title: "Prajeet the Creator Channel",
+    year: "Growing Together",
+    title: "Building a Student Community",
     description:
-      "Launched the YouTube channel to share scholarship guidance, application tips, and embassy updates with students worldwide.",
+      "As more students joined the journey, the channel grew into a supportive community where I regularly shared scholarship updates, answered questions, and helped students make informed decisions about studying abroad.",
   },
   {
-    year: "Community",
-    title: "Building a Community",
+    year: "Software Engineer",
+    title: "Balancing Career & Passion",
     description:
-      "Helped thousands of students successfully apply for scholarships like ICCR, COMPEX, and Study in India programs.",
+      "After completing my Bachelor's in Computer Science at NIT Rourkela, I began my career as a Software Engineer. Alongside my professional work, I continued creating educational content and supporting students because helping others remained my passion.",
   },
   {
-    year: "Website",
-    title: "This Website",
+    year: "Today",
+    title: "Building This Platform",
     description:
-      "Created this platform as a single source of truth for all scholarship information — reducing repetitive questions and building a comprehensive resource.",
+      "To make scholarship information more accessible, I created this website as a central resource where students can find verified updates, guides, FAQs, and learning resources—all in one place while continuing to grow the community.",
   },
 ];
 
@@ -79,7 +79,9 @@ export default function AboutPage() {
             Hi, I&apos;m <span className="gradient-text">Prajeet</span> 👋
           </h1>
           <p className="text-dark-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            A software engineer, helping students navigate scholarships, understand real opportunities, and make the right decisions for higher education in India and Nepal.
+            A software engineer, helping students navigate scholarships,
+            understand real opportunities, and make the right decisions for
+            higher education in India and Nepal.
           </p>
         </motion.div>
 
@@ -108,9 +110,9 @@ export default function AboutPage() {
                 I started this journey because I experienced firsthand how
                 confusing and overwhelming the scholarship application process
                 can be. Finding reliable information, understanding eligibility,
-                preparing documents — it&apos;s a maze. My mission is to simplify
-                this entire process so students can focus on what matters: their
-                education and growth.
+                preparing documents — it&apos;s a maze. My mission is to
+                simplify this entire process so students can focus on what
+                matters: their education and growth.
               </p>
               {/* Social links */}
               <div className="flex items-center gap-3 mt-6 justify-center md:justify-start">

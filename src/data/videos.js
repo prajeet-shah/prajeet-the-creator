@@ -1,15 +1,16 @@
 export const featuredVideos = [
   {
     id: 1,
-    title: "Complete ICCR Scholarship Guide 2026 - Step by Step",
+    title: "Complete Compex Scholarship Guide 2026 - Step by Step",
     description: "",
-    youtubeId: "sJ-O5zgT_pk",
+    youtubeId: "276Abg2_hDU",
     thumbnail: "",
     category: "",
   },
   {
     id: 2,
-    title: "Got ICCR Scholarship? Watch This Before Coming to India | NIT Surathkal Student Podcast",
+    title:
+      "Got ICCR Scholarship? Watch This Before Coming to India | NIT Surathkal Student Podcast",
     description: "",
     youtubeId: "2sDBr_dP0NY",
     thumbnail: "",
@@ -25,9 +26,9 @@ export const featuredVideos = [
   },
   {
     id: 4,
-    title: "How to Prepare for IOE Entrance 2083 | Complete Roadmap",
+    title: "Podcast with compex scholar from NIT Rourkela | Detail video",
     description: "",
-    youtubeId: "l0hXogMs0d0",
+    youtubeId: "UgsuK9gn-x8",
     thumbnail: "",
     category: "",
   },
