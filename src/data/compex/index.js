@@ -7,15 +7,15 @@
  */
 
 import { set01 } from "./set01";
-// import { set02 } from "./set02";  ← uncomment as you add more sets
-// import { set03 } from "./set03";
+import { set02 } from "./set02";
+import { set03 } from "./set03";
 // ... up to set10
 
 /** All available model sets */
 export const allSets = [
   set01,
-  // set02,
-  // set03,
+  set02,
+  set03,
   // set04,
   // set05,
   // set06,
@@ -75,7 +75,11 @@ export function getSubjectQuestions(setId, subject) {
   const set = getSet(setId);
   if (!set) return null;
 
-  if (subject === "physics" || subject === "chemistry" || subject === "english") {
+  if (
+    subject === "physics" ||
+    subject === "chemistry" ||
+    subject === "english"
+  ) {
     return set.shared[subject] ?? null;
   }
   if (subject === "math") return set.pcmOnly.math ?? null;
@@ -95,4 +99,4 @@ export function stripAnswers(questions) {
   return questions.map(({ answer, ...rest }) => rest);
 }
 
-export { set01 };
+export { set01, set02, set03 };
