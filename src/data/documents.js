@@ -53,4 +53,49 @@ export const documentCategories = [
       },
     ],
   },
+  {
+    id: "compex-documents",
+    title: "COMPEX Documents",
+    icon: "🌍",
+    color: "from-emerald-600 to-teal-700",
+    samples: [
+      {
+        title: "Bank Challan",
+        image: "/images/compex/Bank-challan.jpg",
+        description:
+          "Sample bank challan receipt for the COMPEX application fee payment.",
+      },
+      {
+        title: "Class 10 Percentage Conversion Sample",
+        image: "/images/compex/class 10 percentage convert sample.jpg",
+        description:
+          "Sample format for converting Class 10 grades/GPA into percentage.",
+      },
+      {
+        title: "Class 12 Appearing Student Document Sample",
+        image:
+          "/images/compex/class 12 appearing student document sample.jpg",
+        description:
+          "Sample certificate for candidates who are appearing in Class 12 exams.",
+      },
+      {
+        title: "Class 12 Percentage Conversion",
+        image: "/images/compex/class 12 percentage conversion.jpg",
+        description:
+          "Sample document for converting Class 12 grades/GPA into percentage.",
+      },
+      {
+        title: "Class 12 Percentage Conversion Sample",
+        image: "/images/compex/class 12 percentage convert sample.jpg",
+        description:
+          "Another sample format for Class 12 percentage conversion.",
+      },
+      {
+        title: "English Translation Format",
+        image: "/images/compex/english translation format.jpg",
+        description:
+          "Sample English translation format for documents not originally in English.",
+      },
+    ],
+  },
 ];

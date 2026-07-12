@@ -151,4 +151,30 @@ export const updates = [
     isPinned: true,
     publishedAt: "2026-07-10",
   },
+  {
+    id: 10,
+    slug: "study-in-india-grade-conversion-sheet-2026",
+    title: "Study in India Grade Conversion Sheet Available",
+    content:
+      "The official Study in India (SII) Grade Conversion Sheet is now available for download.\n\nApplicants can use this document to understand the grade/percentage conversion applicable while filling out the Study in India application form.\n\n📌 Download and verify your converted grades before submitting your application. Incorrect grade conversion may affect your admission or scholarship application.",
+    type: "resource",
+    tags: [
+      "Study in India",
+      "SII",
+      "Grade Conversion",
+      "PDF",
+      "Scholarship",
+      "Admission",
+    ],
+    source: "Study in India",
+    isPinned: true,
+    publishedAt: "2026-07-12",
+    links: [
+      {
+        label: "Study in india gradesheet conversion ",
+        url: "https://drive.google.com/file/d/18kQvurNFeyOX_ytu8lbDWsefeYcHUEIi/view?usp=sharing",
+        type: "pdf",
+      },
+    ],
+  },
 ];
