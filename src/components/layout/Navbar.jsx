@@ -55,10 +55,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-110">
+          <Link href="/" className="flex items-center gap-1 group">
+            <div className="relative w-12 h-12 overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-110">
               <Image
-                src="/images/logo.png"
+                src="/images/new-logo.png"
                 alt="Prajeet the Creator Logo"
                 fill
                 className="object-cover"

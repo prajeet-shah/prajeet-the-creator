@@ -13,8 +13,9 @@ export async function generateMetadata({ params }) {
   const scholarship = scholarships.find((s) => s.slug === resolvedParams.slug);
   if (!scholarship) return { title: "Not Found" };
   return {
-    title: `${scholarship.title} FAQs | Prajeet the Creator`,
-    description: `Frequently asked questions about the ${scholarship.title}.`,
+    title: `${scholarship.title} FAQs — Eligibility, Deadline & Application Questions Answered`,
+    description: `Common questions about the ${scholarship.title}: eligibility, required documents, deadlines, and the application process — answered directly.`,
+    alternates: { canonical: `/faqs/${resolvedParams.slug}` },
   };
 }
 
@@ -22,7 +23,7 @@ export default async function FAQPage({ params }) {
   const resolvedParams = await params;
   const scholarship = scholarships.find((s) => s.slug === resolvedParams.slug);
   const faqs = faqsData[resolvedParams.slug];
-  
+
   if (!scholarship || !faqs) {
     return (
       <div className="min-h-screen pt-28 flex items-center justify-center">

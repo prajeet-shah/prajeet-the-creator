@@ -7,8 +7,25 @@ import Link from "next/link";
 export default function FAQClient({ scholarship, faqs }) {
   const [openFaq, setOpenFaq] = useState(null);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-dark-950 pt-28 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <motion.div
@@ -38,7 +55,8 @@ export default function FAQClient({ scholarship, faqs }) {
             {scholarship.title} <span className="gradient-text">FAQs</span>
           </h1>
           <p className="text-dark-400 text-lg">
-            Find answers to common questions about the {scholarship.shortName} application process, eligibility, and benefits.
+            Find answers to common questions about the {scholarship.shortName}{" "}
+            application process, eligibility, and benefits.
           </p>
         </motion.div>
 
@@ -61,7 +79,9 @@ export default function FAQClient({ scholarship, faqs }) {
                 <span className="text-base font-semibold text-white pr-4">
                   {faq.question}
                 </span>
-                <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-dark-800/50 flex items-center justify-center transition-transform duration-300 ${openFaq === i ? "rotate-180 bg-primary-500/10 text-primary-400" : "text-dark-400"}`}>
+                <div
+                  className={`flex-shrink-0 w-8 h-8 rounded-full bg-dark-800/50 flex items-center justify-center transition-transform duration-300 ${openFaq === i ? "rotate-180 bg-primary-500/10 text-primary-400" : "text-dark-400"}`}
+                >
                   <svg
                     className="w-5 h-5"
                     fill="none"
