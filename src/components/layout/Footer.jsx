@@ -6,9 +6,18 @@ const footerLinks = {
     { label: "ICCR Scholarship", href: "/scholarships/iccr-scholarship" },
     { label: "COMPEX Scholarship", href: "/scholarships/compex-scholarship" },
     { label: "Study in India", href: "/scholarships/study-in-india-sii" },
-    { label: "Mahatma Gandhi", href: "/scholarships/mahatma-gandhi-scholarship" },
-    { label: "Golden Jubilee", href: "/scholarships/golden-jubilee-scholarship" },
-    { label: "Homi J. Bhabha", href: "/scholarships/homi-j-bhabha-scholarship" },
+    {
+      label: "Mahatma Gandhi",
+      href: "/scholarships/mahatma-gandhi-scholarship",
+    },
+    {
+      label: "Golden Jubilee",
+      href: "/scholarships/golden-jubilee-scholarship",
+    },
+    {
+      label: "Homi J. Bhabha",
+      href: "/scholarships/homi-j-bhabha-scholarship",
+    },
   ],
   resources: [
     { label: "Updates & Alerts", href: "/updates" },
@@ -59,7 +68,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <div className="relative w-10 h-10 overflow-hidden rounded-xl">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/new-logo.png"
                   alt="Prajeet the Creator"
                   fill
                   sizes="40px"
@@ -139,7 +148,8 @@ export default function Footer() {
               Stay Updated
             </h3>
             <p className="text-sm text-dark-400 mb-4">
-              Follow our YouTube channel for the latest scholarship updates and guidance.
+              Follow our YouTube channel for the latest scholarship updates and
+              guidance.
             </p>
             <a
               href="https://youtube.com/@prajeetthecreator"
@@ -158,10 +168,12 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-dark-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-dark-500">
-            © {new Date().getFullYear()} Prajeet the Creator. All rights reserved.
+            © {new Date().getFullYear()} Prajeet the Creator. All rights
+            reserved.
           </p>
           <p className="text-xs text-dark-600">
-            Scholarship information is for guidance only. Always verify with official sources.
+            Scholarship information is for guidance only. Always verify with
+            official sources.
           </p>
         </div>
       </div>
