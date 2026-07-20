@@ -13,6 +13,7 @@ import { set04 } from "./set04";
 import { set05 } from "./set05";
 import { set06 } from "./set06";
 import { set07 } from "./set07";
+import { set08 } from "./set08";
 // ... up to set10
 
 /** All available model sets */
@@ -24,7 +25,7 @@ export const allSets = [
   set05,
   set06,
   set07,
-  // set08,
+  set08,
   // set09,
   // set10,
 ];
@@ -103,4 +104,4 @@ export function stripAnswers(questions) {
   return questions.map(({ answer, ...rest }) => rest);
 }
 
-export { set01, set02, set03, set04, set05, set06, set07 };
+export { set01, set02, set03, set04, set05, set06, set07, set08 };

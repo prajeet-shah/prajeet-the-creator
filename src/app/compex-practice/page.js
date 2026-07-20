@@ -96,7 +96,7 @@ export default function CompexLandingPage() {
                 <div>
                   <h3 className="text-2xl font-bold">PCB Stream</h3>
                   <p className="text-sm text-emerald-300">
-                    For Pharmacy / Agriculture / Nursing
+                    For Pharmacy / Agriculture / Nursing / Food Technology
                   </p>
                 </div>
               </div>
