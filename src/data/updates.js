@@ -145,7 +145,7 @@ export const updates = [
     title: "Result of ICCR Scholarship Schemes: 2026-27 🎉📢",
     content:
       "The results for the ICCR Scholarship Schemes 2026-27 have been officially declared.\n\nSelected candidates under the Atal Bihari Vajpayee General Scholarship Scheme (ABVGSS), Sushma Swaraj Silver Jubilee Scholarship Scheme (SSSJSS), and Lata Mangeshkar Dance & Music Scholarship Scheme (LMDMSS) have already been informed via email by the Embassy.\n\n📧 All applicants are advised to check their registered email inbox, including the Spam/Junk folder, for the official result notification.",
-    type: "announcement",
+    type: "message",
     tags: ["ICCR", "Scholarship", "Result", "ABVGSS", "SSSJSS", "LMDMSS"],
     source: "ICCR",
     isPinned: true,
@@ -157,7 +157,7 @@ export const updates = [
     title: "Study in India Grade Conversion Sheet Available",
     content:
       "The official Study in India (SII) Grade Conversion Sheet is now available for download.\n\nApplicants can use this document to understand the grade/percentage conversion applicable while filling out the Study in India application form.\n\n📌 Download and verify your converted grades before submitting your application. Incorrect grade conversion may affect your admission or scholarship application.",
-    type: "resource",
+    type: "message",
     tags: [
       "Study in India",
       "SII",
@@ -167,13 +167,39 @@ export const updates = [
       "Admission",
     ],
     source: "Study in India",
-    isPinned: true,
+    isPinned: false,
     publishedAt: "2026-07-12",
     links: [
       {
         label: "Study in india gradesheet conversion ",
         url: "https://drive.google.com/file/d/18kQvurNFeyOX_ytu8lbDWsefeYcHUEIi/view?usp=sharing",
         type: "pdf",
+      },
+    ],
+  },
+  {
+    id: 11,
+    slug: "compex-model-set-1-to-10-uploaded",
+    title: "COMPEX Model Set 1–10 Practice Questions Uploaded",
+    content:
+      "Hello everyone! All COMPEX Scholarship Model Set Practice Questions (Set 1 to Set 10) have been uploaded.\n\nThe model sets are arranged in increasing order of difficulty, allowing you to build your preparation step by step. They are designed to help you understand the exam pattern, improve your problem-solving skills, and prepare effectively for the COMPEX Scholarship examination.\n\n📌 Practice the sets in sequence, review your mistakes, and track your progress for the best results.",
+    type: "resource",
+    tags: [
+      "COMPEX",
+      "Scholarship",
+      "Model Set",
+      "Practice Questions",
+      "Preparation",
+      "Exam",
+    ],
+    source: "Prajeet the Creator",
+    isPinned: true,
+    publishedAt: "2026-07-22",
+    links: [
+      {
+        label: "COMPEX Model Set 1–10 Practice Questions",
+        url: "https://www.prajeetthecreator.com/compex-practice",
+        type: "website",
       },
     ],
   },
