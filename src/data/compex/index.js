@@ -15,6 +15,7 @@ import { set06 } from "./set06";
 import { set07 } from "./set07";
 import { set08 } from "./set08";
 import { set09 } from "./set09";
+import { set10 } from "./set10";
 // ... up to set10
 
 /** All available model sets */
