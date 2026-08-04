@@ -131,6 +131,28 @@ export default function ScholarshipDetailClient({ scholarship }) {
             icon="📄"
             delay={0.15}
           >
+            {(scholarship.slug === "iccr-scholarship" || scholarship.slug === "compex-scholarship") && (
+              <div className="mb-6 bg-primary-900/20 border border-primary-500/20 rounded-xl p-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                <div>
+                  <h4 className="text-primary-300 font-semibold mb-1 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Free Preparation Tools
+                  </h4>
+                  <p className="text-dark-300 text-sm">Need to resize your documents to exact {scholarship.shortName} specifications? Use our free browser tools.</p>
+                </div>
+                <div className="flex gap-2 w-full sm:w-auto shrink-0">
+                  {scholarship.slug === "compex-scholarship" ? (
+                    <Link href="/tools/compex-documents" className="flex-1 sm:flex-none text-center px-4 py-2 bg-primary-600/20 hover:bg-primary-600/30 text-primary-300 rounded-lg text-sm font-medium transition-colors border border-primary-500/30">
+                      COMPEX Document Prep Tool
+                    </Link>
+                  ) : (
+                    <Link href="/tools/image-resizer" className="flex-1 sm:flex-none text-center px-4 py-2 bg-primary-600/20 hover:bg-primary-600/30 text-primary-300 rounded-lg text-sm font-medium transition-colors border border-primary-500/30">
+                      Image Resizer
+                    </Link>
+                  )}
+                </div>
+              </div>
+            )}
             <ul className="space-y-3">
               {scholarship.documents.map((item, i) => (
                 <li
