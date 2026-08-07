@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import myImage from "../../../public/images/prajeet-shah.png";
 
 const milestones = [
   {
@@ -94,10 +95,16 @@ export default function AboutPage() {
         >
           <div className="flex flex-col md:flex-row gap-8 items-center">
             {/* Avatar */}
-            <div className="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-primary-500/20 flex-shrink-0">
-              <div className="w-full h-full bg-gradient-to-br from-primary-600 to-accent-500 flex items-center justify-center">
-                <span className="text-6xl">🎓</span>
-              </div>
+            {/* Avatar */}
+            <div className="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-primary-500/20 flex-shrink-0 shadow-xl shadow-primary-500/10">
+              <Image
+                src="/images/prajeet-shah.png"
+                alt="Prajeet Shah"
+                fill
+                sizes="160px"
+                priority
+                className="object-fill"
+              />
             </div>
 
             {/* Bio */}
