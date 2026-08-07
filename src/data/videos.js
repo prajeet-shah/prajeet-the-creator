@@ -1,6 +1,14 @@
 export const featuredVideos = [
   {
     id: 1,
+    title: "Podcast with the compex scholarship students",
+    description: "",
+    youtubeId: "OuBNgn9OqpI",
+    thumbnail: "",
+    category: "",
+  },
+  {
+    id: 2,
     title: "Complete Compex Scholarship Guide 2026 - Step by Step",
     description: "",
     youtubeId: "276Abg2_hDU",
@@ -8,7 +16,7 @@ export const featuredVideos = [
     category: "",
   },
   {
-    id: 2,
+    id: 3,
     title:
       "Got ICCR Scholarship? Watch This Before Coming to India | NIT Surathkal Student Podcast",
     description: "",
@@ -16,14 +24,7 @@ export const featuredVideos = [
     thumbnail: "",
     category: "",
   },
-  {
-    id: 3,
-    title: "Study in India complete details video.",
-    description: "",
-    youtubeId: "Y7fe7T4HrL8",
-    thumbnail: "",
-    category: "",
-  },
+
   {
     id: 4,
     title: "Podcast with compex scholar from NIT Rourkela | Detail video",

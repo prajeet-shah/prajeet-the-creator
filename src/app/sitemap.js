@@ -60,6 +60,49 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    // ── Tools ──────────────────────────────────────────────────────────────
+    {
+      url: `${BASE_URL}/tools`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/tools/image-resizer`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/tools/pdf-compressor`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/tools/merge-pdf`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/tools/jpg-to-pdf`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/tools/pdf-to-jpg`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/tools/compex-documents`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
     ...scholarshipPages,
     ...faqPages,
   ];

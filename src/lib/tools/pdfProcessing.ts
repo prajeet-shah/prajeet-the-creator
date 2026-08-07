@@ -182,3 +182,46 @@ export async function pdfPageToJpg(file) {
     }, 'image/jpeg', 0.9);
   });
 }
+
+/**
+ * Convert every page of a PDF to individual JPEG Files.
+ * Returns an array of File objects, one per page.
+ */
+export async function allPdfPagesToJpg(
+  file: File,
+  scale = 2.0,
+  quality = 0.92
+): Promise<File[]> {
+  const arrayBuffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) }).promise;
+  const numPages = pdf.numPages;
+  const baseName = file.name.replace(/\.pdf$/i, '');
+  const results: File[] = [];
+
+  for (let i = 1; i <= numPages; i++) {
+    const page = await pdf.getPage(i);
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    if (!ctx) throw new Error('Could not get 2d context');
+
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+
+    await page.render({ canvasContext: ctx, viewport }).promise;
+
+    const jpgFile = await new Promise<File>((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (!blob) { reject(new Error(`Failed to render page ${i}`)); return; }
+        const fileName = numPages === 1
+          ? `${baseName}.jpg`
+          : `${baseName}-page-${String(i).padStart(3, '0')}.jpg`;
+        resolve(new File([blob], fileName, { type: 'image/jpeg' }));
+      }, 'image/jpeg', quality);
+    });
+
+    results.push(jpgFile);
+  }
+
+  return results;
+}

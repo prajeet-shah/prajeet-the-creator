@@ -37,6 +37,13 @@ export default function ToolsLandingPage() {
       icon: "🔄",
       ready: true,
     },
+    {
+      title: "PDF to JPG",
+      description: "Convert every page of your PDF into high-quality JPG images. Download individually or as a ZIP.",
+      href: "/tools/pdf-to-jpg",
+      icon: "📄",
+      ready: true,
+    },
   ];
 
   return (
