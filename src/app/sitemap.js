@@ -43,6 +43,12 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
+      url: `${BASE_URL}/career-bato`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/compex-practice`,
       lastModified: now,
       changeFrequency: "weekly",

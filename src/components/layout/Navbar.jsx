@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/scholarships", label: "Scholarships" },
+  { href: "/career-bato", label: "Career Bato" },
   { href: "/tools", label: "Tools" },
   { href: "/updates", label: "Updates" },
   { href: "/documents", label: "Documents" },
@@ -62,6 +63,7 @@ export default function Navbar() {
                 src="/images/new-logo.png"
                 alt="Prajeet the Creator Logo"
                 fill
+                sizes="48px"
                 className="object-cover"
               />
             </div>
