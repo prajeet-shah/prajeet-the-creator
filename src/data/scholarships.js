@@ -67,15 +67,15 @@ export const scholarships = [
 
     category: "Fully Funded",
 
-    deadline: "July 9, 2025",
-    deadlineStatus: "closed",
+    deadline: "September 10, 2026",
+    deadlineStatus: "open",
 
     coverColor: "from-emerald-600 to-teal-700",
     icon: "🌍",
 
     eligibility: [
       "Must be a Nepalese citizen",
-      "Age between 16 to 23 years (as on 1 July 2025)",
+      "Age between 16 to 23 years (as on 1 July 2026)",
       "Minimum 60% aggregate marks in Class 12",
       "Minimum 50% marks in English",
       "For Engineering: Minimum 60% in Physics, Chemistry, Mathematics (PCM)",

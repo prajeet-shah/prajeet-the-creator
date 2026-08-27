@@ -203,4 +203,23 @@ export const updates = [
       },
     ],
   },
+  {
+    id: 12,
+    slug: "compex-scholarship-2026-open",
+    title: "COMPEX Scholarship 2026-27 Applications Open",
+    content:
+      "The Embassy of India, Kathmandu has invited online applications from Nepalese nationals for studying undergraduate courses in Engineering, Pharmacy, Agriculture, Food Technology, and Nursing in India under the COMPEX-2026 Scholarship Scheme.\n\nThe last date for online registration and submission is September 10, 2026. Students are advised to register on the Study in India portal and submit their applications before the deadline.",
+    type: "message",
+    tags: ["COMPEX", "Scholarship", "Application Open", "Undergraduate", "2026"],
+    source: "Embassy of India, Kathmandu",
+    isPinned: true,
+    publishedAt: "2026-08-27",
+    links: [
+      {
+        label: "Official Website",
+        url: "https://www.indembkathmandu.gov.in/",
+        type: "link",
+      },
+    ],
+  },
 ];
