@@ -13,40 +13,41 @@ const MULTI_UPLOAD_KEYS = ["citizenship", "tenth", "twelfth"];
 
 const DOCUMENT_CONFIG = {
   photo: {
-    label: "Upload the scanned copy of the recent passport size photo",
+    label: "Upload the scanned copy of the recent passport size photo:*",
     name: "passport_photo",
     outputFormat: "image/jpeg",
     exactWidth: 276,
     exactHeight: 354,
-    maxSizeKB: 90,
+    maxSizeKB: 150,
     multi: false,
+    tooltip: "Instructions to upload photograph: 1. Please Upload one recent passport size photograph with white background. 2. Size of the image should be min. 100 kb and max. 200 kb 3. Image should be .jpg or .jpeg format. 4. Scanner dpi should be 200 dpi 5. File once uploaded cannot be changed. 6. Dimension should be 3.5cm * 4.5cm",
   },
   signature: {
-    label: "Upload your scanned signature",
+    label: "Upload your scanned signature:*",
     name: "signature",
     outputFormat: "image/jpeg",
-    maxSizeKB: 90,
+    maxSizeKB: 100,
     multi: false,
   },
   citizenship: {
-    label: "Upload your scanned English Translated Citizenship (certified by Public Notary)",
+    label: "Upload your scanned English Translated Citizenship certified by Public Notary:*",
     name: "citizenship",
     outputFormat: "application/pdf",
-    maxSizeKB: 900,
+    maxSizeKB: 700,
     multi: true,
   },
   tenth: {
-    label: "Upload your scanned 10th class Pass Certificate",
+    label: "Upload your scanned 10th class Pass Certificate:*",
     name: "10th_certificate",
     outputFormat: "application/pdf",
-    maxSizeKB: 900,
+    maxSizeKB: 700,
     multi: true,
   },
   twelfth: {
-    label: "Upload your scanned 12th class Pass Certificate",
+    label: "Upload your 12th class Certificate:*",
     name: "12th_certificate",
     outputFormat: "application/pdf",
-    maxSizeKB: 900,
+    maxSizeKB: 700,
     multi: true,
   },
 };
@@ -157,7 +158,18 @@ export default function CompexDocuments() {
             imageFiles.push(f);
           }
         }
-        const merged = await imagesToPdf(imageFiles);
+        
+        // Compress images before merging to ensure PDF doesn't exceed target size
+        const compressedImageFiles = [];
+        // Reserve 15KB for PDF structure overhead so the final PDF size allows exact padding
+        const maxImageAllowedKB = Math.max(10, cfg.maxSizeKB - 15);
+        const perImageSizeMB = (maxImageAllowedKB / 1024) / imageFiles.length;
+        for (const img of imageFiles) {
+          const compressedBlob = await compressImage(img, { maxSizeMB: perImageSizeMB });
+          compressedImageFiles.push(new File([compressedBlob], img.name, { type: 'image/jpeg' }));
+        }
+
+        const merged = await imagesToPdf(compressedImageFiles);
         finalFile = new File([merged], `${cfg.name}.pdf`, { type: "application/pdf" });
 
       } else {
@@ -195,6 +207,14 @@ export default function CompexDocuments() {
           });
         }
         finalFile = new File([finalFile], `${cfg.name}.jpg`, { type: "image/jpeg" });
+      }
+
+      // Pad file to exact size if it is smaller
+      const targetBytes = cfg.maxSizeKB * 1024;
+      if (finalFile.size < targetBytes) {
+        const diff = targetBytes - finalFile.size;
+        const padding = new Uint8Array(diff);
+        finalFile = new File([finalFile, padding], finalFile.name, { type: finalFile.type });
       }
 
       setDocuments((prev) => ({
@@ -292,7 +312,22 @@ export default function CompexDocuments() {
               {/* ── Left: Controls ──────────────────────────────────────── */}
               <div className="w-full md:w-1/2 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-4">{cfg.label}</h3>
+                  <div className="flex items-start gap-2 mb-4">
+                    <h3 className="text-lg font-bold text-white flex-1">
+                      {cfg.label.replace('*', '')}
+                      {cfg.label.includes('*') && <span className="text-red-500">*</span>}
+                    </h3>
+                    <div className="group relative flex items-center justify-center shrink-0 mt-0.5">
+                      <svg className="w-5 h-5 text-dark-400 hover:text-white cursor-help transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                      </svg>
+                      {cfg.tooltip && (
+                        <div className="absolute bottom-full left-0 md:-left-1/2 mb-2 hidden group-hover:block w-72 bg-[#1a1a1a] text-white text-sm rounded p-3 shadow-xl z-50 leading-relaxed font-normal">
+                          {cfg.tooltip}
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
                   <input
                     type="file"
