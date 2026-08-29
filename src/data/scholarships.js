@@ -65,6 +65,9 @@ export const scholarships = [
     shortDescription:
       "COMPEX Scholarship is offered by the Embassy of India, Kathmandu for Nepalese students to pursue undergraduate courses like Engineering, Pharmacy, Agriculture, Food Technology, and Nursing in India through a competitive entrance exam.",
 
+    introOverview:
+      "The COMPEX Scholarship 2026-27 is a fully funded undergraduate scholarship scheme offered by the Embassy of India, Kathmandu, for Nepalese citizens. It allows students to pursue BE/B.Tech, B.Pharmacy, B.Sc. Agriculture, Food Technology, and Nursing in top Indian universities. Selection is based on a competitive Computer-Based Test (CBT) conducted in Kathmandu. Preference is accorded to candidates who have completed their school studies in Nepal.",
+
     category: "Fully Funded",
 
     deadline: "September 10, 2026",
@@ -116,7 +119,7 @@ export const scholarships = [
     ],
 
     officialLink: "https://www.indembkathmandu.gov.in/",
-    youtubeVideoId: "dOmZt63Meq4",
+    youtubeVideoId: "cios6q-sHYs",
   },
   {
     slug: "study-in-india-sii",
