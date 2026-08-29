@@ -87,6 +87,11 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#0a0a0a" />
         <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9281548273962788"
+          crossOrigin="anonymous"
+        ></script>
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
