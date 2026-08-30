@@ -222,4 +222,22 @@ export const updates = [
       },
     ],
   },
+  {
+    id: 13,
+    slug: "compex-scholarship-university-list-updated",
+    title: "COMPEX Scholarship Update!!",
+    content: "Hello everyone, I have added the list of available universities into my website. Click here see the university list.",
+    type: "announcement",
+    tags: ["COMPEX", "Scholarship", "Universities", "Update"],
+    source: "Prajeet the Creator",
+    isPinned: false,
+    publishedAt: "2026-08-30",
+    links: [
+      {
+        label: "Click here to see the university list",
+        url: "/scholarships/compex-scholarship#participating-universities",
+        type: "link",
+      },
+    ],
+  },
 ];

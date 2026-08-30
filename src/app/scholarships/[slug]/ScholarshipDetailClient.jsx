@@ -566,6 +566,7 @@ export default function ScholarshipDetailClient({ scholarship }) {
                 title="List of Universities in Compex Scholarship 2026-27"
                 icon="🏛️"
                 delay={0.23}
+                id="participating-universities"
               >
                 <div className="max-h-96 overflow-y-auto pr-2 custom-scrollbar">
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -693,9 +694,10 @@ export default function ScholarshipDetailClient({ scholarship }) {
   );
 }
 
-function DetailSection({ title, icon, delay = 0, children }) {
+function DetailSection({ title, icon, delay = 0, id, children }) {
   return (
     <motion.section
+      id={id}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
