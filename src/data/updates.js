@@ -167,7 +167,7 @@ export const updates = [
       "Admission",
     ],
     source: "Study in India",
-    isPinned: false,
+    isPinned: true,
     publishedAt: "2026-07-12",
     links: [
       {
@@ -210,7 +210,13 @@ export const updates = [
     content:
       "The Embassy of India, Kathmandu has invited online applications from Nepalese nationals for studying undergraduate courses in Engineering, Pharmacy, Agriculture, Food Technology, and Nursing in India under the COMPEX-2026 Scholarship Scheme.\n\nThe last date for online registration and submission is September 10, 2026. Students are advised to register on the Study in India portal and submit their applications before the deadline.",
     type: "message",
-    tags: ["COMPEX", "Scholarship", "Application Open", "Undergraduate", "2026"],
+    tags: [
+      "COMPEX",
+      "Scholarship",
+      "Application Open",
+      "Undergraduate",
+      "2026",
+    ],
     source: "Embassy of India, Kathmandu",
     isPinned: true,
     publishedAt: "2026-08-27",
@@ -226,7 +232,8 @@ export const updates = [
     id: 13,
     slug: "compex-scholarship-university-list-updated",
     title: "COMPEX Scholarship Update!!",
-    content: "Hello everyone, I have added the list of available universities into my website. Click here see the university list.",
+    content:
+      "Hello everyone, I have added the list of available universities into my website. Click here see the university list.",
     type: "announcement",
     tags: ["COMPEX", "Scholarship", "Universities", "Update"],
     source: "Prajeet the Creator",

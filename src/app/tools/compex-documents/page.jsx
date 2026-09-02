@@ -5,7 +5,15 @@ import Link from "next/link";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import PrivacyBanner from "@/components/tools/PrivacyBanner";
-import { compressImage } from "@/lib/tools/imageProcessing";
+import CropperModal from "@/components/tools/CropperModal";
+import {
+  COMPEX_PHOTO_SPEC,
+  compressImage,
+  createCompexPhoto,
+  getCroppedImg,
+  readImageDimensions,
+  readJpegDpi,
+} from "@/lib/tools/imageProcessing";
 import { compressPdf, pdfPageToJpg, imagesToPdf } from "@/lib/tools/pdfProcessing";
 
 // Keys that support multiple image uploads and always output PDF
@@ -16,11 +24,12 @@ const DOCUMENT_CONFIG = {
     label: "Upload the scanned copy of the recent passport size photo:*",
     name: "passport_photo",
     outputFormat: "image/jpeg",
-    exactWidth: 276,
-    exactHeight: 354,
-    maxSizeKB: 150,
+    exactWidth: COMPEX_PHOTO_SPEC.width,
+    exactHeight: COMPEX_PHOTO_SPEC.height,
+    minSizeKB: COMPEX_PHOTO_SPEC.minSizeKB,
+    maxSizeKB: COMPEX_PHOTO_SPEC.maxSizeKB,
     multi: false,
-    tooltip: "Instructions to upload photograph: 1. Please Upload one recent passport size photograph with white background. 2. Size of the image should be min. 100 kb and max. 200 kb 3. Image should be .jpg or .jpeg format. 4. Scanner dpi should be 200 dpi 5. File once uploaded cannot be changed. 6. Dimension should be 3.5cm * 4.5cm",
+    tooltip: "Upload one recent passport-size photograph with a white background. The tool creates a JPG/JPEG photo at 120–180 KB, 200 DPI, and 3.5 cm × 4.5 cm (276 × 354 px).",
   },
   signature: {
     label: "Upload your scanned signature:*",
@@ -61,6 +70,8 @@ const initialDocState = (multi) => ({
 });
 
 export default function CompexDocuments() {
+  const [photoCrop, setPhotoCrop] = useState(null);
+  const [photoValidationError, setPhotoValidationError] = useState("");
   const [documents, setDocuments] = useState(
     Object.fromEntries(
       Object.keys(DOCUMENT_CONFIG).map((k) => [
@@ -70,14 +81,16 @@ export default function CompexDocuments() {
     )
   );
 
-  const fileInputs = Object.fromEntries(
-    Object.keys(DOCUMENT_CONFIG).map((k) => [k, useRef(null)])
+  const fileInputs = useRef(
+    Object.fromEntries(
+      Object.keys(DOCUMENT_CONFIG).map((k) => [k, null])
+    )
   );
 
   // ── Upload handlers ────────────────────────────────────────────────────────
 
   const handleUploadClick = (key) => {
-    if (fileInputs[key].current) fileInputs[key].current.click();
+    fileInputs.current[key]?.click();
   };
 
   const handleFileSelect = (key, event) => {
@@ -98,6 +111,17 @@ export default function CompexDocuments() {
       }));
     } else {
       const file = selected[0];
+      if (key === "photo") {
+        if (!['image/jpeg', 'image/jpg'].includes(file.type)) {
+          setPhotoValidationError("Please choose a JPG or JPEG photo.");
+          event.target.value = "";
+          return;
+        }
+        setPhotoValidationError("");
+        setPhotoCrop({ file, imageSrc: URL.createObjectURL(file) });
+        event.target.value = "";
+        return;
+      }
       setDocuments((prev) => ({
         ...prev,
         [key]: {
@@ -111,6 +135,40 @@ export default function CompexDocuments() {
     }
     // Reset input so same file can be re-selected
     event.target.value = "";
+  };
+
+  const handlePhotoCropComplete = async (croppedAreaPixels) => {
+    if (!photoCrop) return;
+    try {
+      const croppedFile = await getCroppedImg(
+        photoCrop.imageSrc,
+        croppedAreaPixels,
+        COMPEX_PHOTO_SPEC.width,
+        COMPEX_PHOTO_SPEC.height
+      );
+      URL.revokeObjectURL(photoCrop.imageSrc);
+      setDocuments((prev) => ({
+        ...prev,
+        photo: {
+          ...prev.photo,
+          file: croppedFile,
+          processedFile: null,
+          status: "uploaded",
+          preview: URL.createObjectURL(croppedFile),
+        },
+      }));
+      setPhotoCrop(null);
+    } catch (error) {
+      console.error(error);
+      URL.revokeObjectURL(photoCrop.imageSrc);
+      setPhotoValidationError("The photo could not be cropped. Please try another JPG/JPEG file.");
+      setPhotoCrop(null);
+    }
+  };
+
+  const cancelPhotoCrop = () => {
+    if (photoCrop?.imageSrc) URL.revokeObjectURL(photoCrop.imageSrc);
+    setPhotoCrop(null);
   };
 
   const removeMultiFile = (key, idx) => {
@@ -181,23 +239,11 @@ export default function CompexDocuments() {
           imageFileToCompress = await pdfPageToJpg(doc.file);
         }
 
-        if (cfg.exactWidth && cfg.exactHeight) {
-          const img = new Image();
-          img.crossOrigin = "anonymous";
-          img.src = URL.createObjectURL(imageFileToCompress);
-          await new Promise((resolve) => (img.onload = resolve));
-
-          const canvas = document.createElement("canvas");
-          canvas.width = cfg.exactWidth;
-          canvas.height = cfg.exactHeight;
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-          const blob = await new Promise((resolve) =>
-            canvas.toBlob(resolve, "image/jpeg", 1.0)
-          );
-          const resized = new File([blob], `${cfg.name}.jpg`, { type: "image/jpeg" });
-          finalFile = await compressImage(resized, {
+        if (key === "photo") {
+          finalFile = await createCompexPhoto(imageFileToCompress);
+        } else if (cfg.exactWidth && cfg.exactHeight) {
+          // Reserved for future exact-dimension image documents.
+          finalFile = await compressImage(imageFileToCompress, {
             maxSizeMB: cfg.maxSizeKB / 1024,
             maxWidthOrHeight: Math.max(cfg.exactWidth, cfg.exactHeight),
           });
@@ -209,12 +255,29 @@ export default function CompexDocuments() {
         finalFile = new File([finalFile], `${cfg.name}.jpg`, { type: "image/jpeg" });
       }
 
-      // Pad file to exact size if it is smaller
-      const targetBytes = cfg.maxSizeKB * 1024;
-      if (finalFile.size < targetBytes) {
-        const diff = targetBytes - finalFile.size;
-        const padding = new Uint8Array(diff);
-        finalFile = new File([finalFile, padding], finalFile.name, { type: finalFile.type });
+      if (key !== "photo") {
+        // Keep non-photo documents close to their configured upload size.
+        const targetBytes = cfg.maxSizeKB * 1024;
+        if (finalFile.size < targetBytes) {
+          finalFile = new File([finalFile, new Uint8Array(targetBytes - finalFile.size)], finalFile.name, { type: finalFile.type });
+        }
+      }
+
+      let compliance = null;
+      if (key === "photo") {
+        const dpi = await readJpegDpi(finalFile);
+        const dimensions = await readImageDimensions(finalFile);
+        compliance = {
+          type: finalFile.type === "image/jpeg",
+          size: finalFile.size >= cfg.minSizeKB * 1024 && finalFile.size <= cfg.maxSizeKB * 1024,
+          dpi: dpi?.x === COMPEX_PHOTO_SPEC.dpi && dpi?.y === COMPEX_PHOTO_SPEC.dpi,
+          dimensions:
+            dimensions.width === COMPEX_PHOTO_SPEC.width &&
+            dimensions.height === COMPEX_PHOTO_SPEC.height,
+        };
+        if (!Object.values(compliance).every(Boolean)) {
+          throw new Error("The processed photo did not meet all COMPEX requirements.");
+        }
       }
 
       setDocuments((prev) => ({
@@ -223,6 +286,7 @@ export default function CompexDocuments() {
           ...prev[key],
           processedFile: finalFile,
           status: "done",
+          compliance,
           preview: finalFile.type.startsWith("image/")
             ? URL.createObjectURL(finalFile)
             : null,
@@ -332,9 +396,11 @@ export default function CompexDocuments() {
                   <input
                     type="file"
                     className="hidden"
-                    ref={fileInputs[key]}
+                    ref={(element) => {
+                      fileInputs.current[key] = element;
+                    }}
                     onChange={(e) => handleFileSelect(key, e)}
-                    accept={cfg.multi ? "image/jpeg,image/png,image/jpg,application/pdf" : "image/jpeg,image/png,image/jpg,application/pdf"}
+                    accept={key === "photo" ? "image/jpeg,.jpg,.jpeg" : "image/jpeg,image/png,image/jpg,application/pdf"}
                     multiple={cfg.multi}
                   />
 
@@ -375,6 +441,9 @@ export default function CompexDocuments() {
                       {doc.file.name}{" "}
                       <span className="text-dark-500">({(doc.file.size / 1024).toFixed(1)} KB)</span>
                     </p>
+                  )}
+                  {key === "photo" && photoValidationError && (
+                    <p className="text-sm text-red-400 mb-4">{photoValidationError}</p>
                   )}
                 </div>
 
@@ -465,6 +534,12 @@ export default function CompexDocuments() {
                       Success: {(doc.processedFile.size / 1024).toFixed(1)} KB
                     </div>
 
+                    {key === "photo" && doc.compliance && (
+                      <div className="w-full mb-4 rounded-lg border border-green-500/20 bg-green-500/5 px-3 py-2 text-xs text-green-300 text-center">
+                        JPEG · {(doc.processedFile.size / 1024).toFixed(1)} KB · 276 × 354 px · 200 DPI · 3.5 × 4.5 cm
+                      </div>
+                    )}
+
                     {doc.preview ? (
                       <div className="bg-white p-2 rounded-lg shadow-xl mb-4 max-w-full">
                         <img
@@ -498,6 +573,16 @@ export default function CompexDocuments() {
           );
         })}
       </div>
+
+      {photoCrop && (
+        <CropperModal
+          imageSrc={photoCrop.imageSrc}
+          targetWidth={COMPEX_PHOTO_SPEC.width}
+          targetHeight={COMPEX_PHOTO_SPEC.height}
+          onCropComplete={handlePhotoCropComplete}
+          onCancel={cancelPhotoCrop}
+        />
+      )}
 
       {/* Footer */}
       <div className="mt-12 mb-12 flex justify-center border-t border-dark-800 pt-12">
