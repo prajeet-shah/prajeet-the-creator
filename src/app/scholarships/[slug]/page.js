@@ -12,13 +12,17 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const scholarship = scholarships.find((s) => s.slug === slug);
   if (!scholarship) return {};
+  const description =
+    slug === "compex-scholarship"
+      ? "COMPEX Scholarship for Nepalese students to study in India. Find eligibility, 220 seats available, and the COMPEX CBT exam syllabus."
+      : scholarship.shortDescription;
   return {
     title: `${scholarship.title}: Eligibility, Documents & How to Apply (${scholarship.deadline !== "NA" ? "2026-27" : "Guide"})`,
-    description: scholarship.shortDescription,
+    description,
     alternates: { canonical: `/scholarships/${slug}` },
     openGraph: {
       title: scholarship.title,
-      description: scholarship.shortDescription,
+      description,
       url: `${SITE_URL}/scholarships/${slug}`,
       type: "article",
     },
@@ -29,12 +33,16 @@ export default async function ScholarshipDetailPage({ params }) {
   const { slug } = await params;
   const scholarship = scholarships.find((s) => s.slug === slug);
   if (!scholarship) notFound();
+  const description =
+    slug === "compex-scholarship"
+      ? "COMPEX Scholarship for Nepalese students to study in India. Find eligibility, 220 seats available, and the COMPEX CBT exam syllabus."
+      : scholarship.shortDescription;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: scholarship.title,
-    description: scholarship.shortDescription,
+    description,
     author: { "@type": "Person", name: "Prajeet Shah" },
     publisher: { "@type": "Organization", name: "Prajeet the Creator" },
     mainEntityOfPage: `${SITE_URL}/scholarships/${slug}`,

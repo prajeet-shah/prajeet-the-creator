@@ -109,10 +109,11 @@ export default function AboutPage() {
 
             {/* Bio */}
             <div className="text-center md:text-left">
-              <h2 className="text-2xl font-bold mb-1">Prajeet the Creator</h2>
+              <h2 className="text-2xl font-bold mb-1">Prajeet Shah</h2>
               <p className="text-primary-400 text-sm font-medium mb-4">
                 Software Engineer • Scholarship Guide • Content Creator
               </p>
+
               <p className="text-dark-400 leading-relaxed text-sm">
                 I started this journey because I experienced firsthand how
                 confusing and overwhelming the scholarship application process

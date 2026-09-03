@@ -8,7 +8,7 @@ export const updates = [
     type: "message",
     tags: ["ICCR", "Application Open"],
     source: "ICCR A2A Portal",
-    isPinned: false,
+    isPinned: true,
     publishedAt: "2026-02-27",
     links: [
       {
@@ -237,7 +237,7 @@ export const updates = [
     type: "announcement",
     tags: ["COMPEX", "Scholarship", "Universities", "Update"],
     source: "Prajeet the Creator",
-    isPinned: false,
+    isPinned: true,
     publishedAt: "2026-08-30",
     links: [
       {

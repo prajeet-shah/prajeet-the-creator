@@ -118,7 +118,7 @@ export default function UpdatesPage() {
                 </p>
 
                 {/* Links */}
-                {update.type !== "message" && update.links && update.links.filter(l => l.url && l.url !== "#").length > 0 && (
+                {update.links && update.links.filter(l => l.url && l.url !== "#").length > 0 && (
                   <div className="flex flex-wrap gap-3 mb-6">
                     {update.links
                       .filter((link) => link.url && link.url !== "#")

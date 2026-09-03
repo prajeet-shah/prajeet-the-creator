@@ -135,272 +135,8 @@ export default function ScholarshipDetailClient({ scholarship }) {
             </ul>
           </DetailSection>
 
-          {/* ── COMPEX-ONLY: Important Dates Table ── */}
-          {scholarship.slug === "compex-scholarship" && (
-            <DetailSection title="Important Dates" icon="📅" delay={0.12}>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-dark-700/50">
-                      <th className="text-left text-dark-400 font-semibold pb-3 pr-4">
-                        Event
-                      </th>
-                      <th className="text-left text-dark-400 font-semibold pb-3">
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-dark-800/50">
-                    {[
-                      {
-                        event: "Opening Date for Online Registration",
-                        date: "August 27, 2026",
-                      },
-                      {
-                        event: "Last Date for Online Application Submission",
-                        date: "September 10, 2026 (up to 11:45 PM)",
-                      },
-                      {
-                        event: "Last Date to Deposit Fee at Nepal SBI Bank",
-                        date: "September 14, 2026",
-                      },
-                      {
-                        event: "Last Date to Upload Challan & Final Submission",
-                        date: "September 16, 2026 (up to 11:45 PM)",
-                      },
-                      {
-                        event: "Tentative Exam Date (CBT)",
-                        date: "4th Week of September 2026",
-                      },
-                    ].map((row, i) => (
-                      <tr key={i}>
-                        <td className="text-dark-300 py-3 pr-4">{row.event}</td>
-                        <td className="text-white font-medium py-3">
-                          {row.date}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </DetailSection>
-          )}
-
-          {/* ── COMPEX-ONLY: Apply Now Link ── */}
-          {scholarship.slug === "compex-scholarship" && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.13 }}
-              className="p-6 rounded-2xl bg-gradient-to-r from-primary-600/10 to-accent-500/10 border border-primary-500/20 text-center"
-            >
-              <h3 className="font-bold text-lg mb-2 text-primary-300">Ready to Apply?</h3>
-              <a
-                href="https://cdn.digialm.com/EForms/configuredHtml/1258/100577/Index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-105 mt-2 text-white"
-              >
-                Apply Now - Click here
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </motion.div>
-          )}
-
-          {/* ── COMPEX-ONLY: Course-wise Eligibility Matrix ── */}
-          {scholarship.slug === "compex-scholarship" && (
-            <DetailSection
-              title="Course-wise Eligibility Matrix"
-              icon="🎯"
-              delay={0.14}
-            >
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-dark-700/50">
-                      <th className="text-left text-dark-400 font-semibold pb-3 pr-3">
-                        Course
-                      </th>
-                      <th className="text-left text-dark-400 font-semibold pb-3 pr-3">
-                        Aggregate Marks
-                      </th>
-                      <th className="text-left text-dark-400 font-semibold pb-3 pr-3">
-                        English Marks
-                      </th>
-                      <th className="text-left text-dark-400 font-semibold pb-3">
-                        Subject Requirements (Class XII)
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-dark-800/50">
-                    {[
-                      {
-                        course: "BE / B.Tech (Engineering)",
-                        aggregate: "60%",
-                        english: "50% in English",
-                        subjects:
-                          "Min. 60% in Physics, Chemistry & Mathematics (PCM)",
-                      },
-                      {
-                        course: "B.Sc. (Agriculture)",
-                        aggregate: "60%",
-                        english: "50% in English",
-                        subjects:
-                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
-                      },
-                      {
-                        course: "B. Pharmacy",
-                        aggregate: "60%",
-                        english: "50% in English",
-                        subjects:
-                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
-                      },
-                      {
-                        course: "B.Sc. (Food Technology)",
-                        aggregate: "60%",
-                        english: "50% in English",
-                        subjects:
-                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
-                      },
-                      {
-                        course: "B.Sc. (Nursing)",
-                        aggregate: "60%",
-                        english: "50% in English",
-                        subjects:
-                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
-                      },
-                    ].map((row, i) => (
-                      <tr key={i}>
-                        <td className="text-white font-medium py-3 pr-3">
-                          {row.course}
-                        </td>
-                        <td className="text-dark-300 py-3 pr-3">
-                          {row.aggregate}
-                        </td>
-                        <td className="text-dark-300 py-3 pr-3">
-                          {row.english}
-                        </td>
-                        <td className="text-dark-300 py-3">{row.subjects}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-4 text-xs text-dark-500 italic border-t border-dark-800/50 pt-3">
-                Note: Class XI marks will not be considered. Age limit is 16 to
-                23 years as on 1 July 2026.
-              </p>
-            </DetailSection>
-          )}
-
-          {/* ── COMPEX-ONLY: Exam Pattern & Marks Distribution ── */}
-          {scholarship.slug === "compex-scholarship" && (
-            <DetailSection
-              title="Exam Pattern & Marks Distribution"
-              icon="📝"
-              delay={0.16}
-            >
-              <p className="text-dark-300 text-sm mb-4">
-                The COMPEX selection is based on a Computer-Based Test (CBT).
-                The exam consists of Multiple Choice Questions (MCQs) with the
-                following marks distribution:
-              </p>
-              <ul className="space-y-3 mb-4">
-                {[
-                  { subject: "Physics", detail: "30 Questions", icon: "⚡" },
-                  { subject: "Chemistry", detail: "30 Questions", icon: "🧪" },
-                  {
-                    subject: "Mathematics",
-                    detail: "30 Questions (For Engineering candidates)",
-                    icon: "📐",
-                  },
-                  {
-                    subject: "Biology",
-                    detail:
-                      "30 Questions (For Agriculture, Pharmacy, Food Tech, and Nursing candidates)",
-                    icon: "🌿",
-                  },
-                  { subject: "English", detail: "30 Questions", icon: "📖" },
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-dark-300 text-sm"
-                  >
-                    <span className="w-6 h-6 rounded-full bg-primary-500/10 text-primary-400 flex items-center justify-center flex-shrink-0 text-xs mt-0.5">
-                      {item.icon}
-                    </span>
-                    <span>
-                      <span className="text-white font-medium">
-                        {item.subject}:
-                      </span>{" "}
-                      {item.detail}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-dark-500 italic border-t border-dark-800/50 pt-3">
-                Note: Total marks and negative marking details will be provided
-                in the official notification.
-              </p>
-            </DetailSection>
-          )}
-
-          {/* ── COMPEX-ONLY: Free Preparation CTA ── */}
-          {scholarship.slug === "compex-scholarship" && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.18 }}
-              className="p-6 sm:p-8 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-900/20 to-teal-900/10 space-y-6"
-            >
-              {/* Practice CTA */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div>
-                  <h3 className="font-bold text-emerald-300 flex items-center gap-2 mb-1">
-                    <span>🎯</span> Free Practice Resources
-                  </h3>
-                  <p className="text-dark-300 text-sm">
-                    Ready to practice? Take our free COMPEX Model Set Questions
-                    and Mock Tests to prepare for the CBT exam.
-                  </p>
-                </div>
-                <Link
-                  href="/compex-practice"
-                  className="shrink-0 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-105 text-center"
-                >
-                  Click here to practice for the COMPEX Exam
-                </Link>
-              </div>
-
-              <div className="border-t border-dark-700/50" />
-
-              {/* Document Tool CTA */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div>
-                  <h3 className="font-bold text-primary-300 flex items-center gap-2 mb-1">
-                    <span>🛠️</span> Document Preparation Tool
-                  </h3>
-                  <p className="text-dark-300 text-sm">
-                    Need to resize your documents to exact COMPEX
-                    specifications? Use our free browser tools.
-                  </p>
-                </div>
-                <Link
-                  href="/tools/compex-documents"
-                  className="shrink-0 px-5 py-2.5 bg-primary-600/20 hover:bg-primary-600/30 text-primary-300 rounded-xl text-sm font-semibold transition-all duration-200 border border-primary-500/30 text-center"
-                >
-                  Go to COMPEX Document Prep Tool
-                </Link>
-              </div>
-            </motion.div>
-          )}
-
           {/* Required Documents */}
-          <DetailSection title="Required Documents" icon="📄" delay={0.15}>
+          <DetailSection title="Required Documents" icon="📄" delay={0.11}>
             {(scholarship.slug === "iccr-scholarship" ||
               scholarship.slug === "compex-scholarship") && (
               <div className="mb-6 bg-primary-900/20 border border-primary-500/20 rounded-xl p-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
@@ -512,6 +248,387 @@ export default function ScholarshipDetailClient({ scholarship }) {
               </div>
             )}
           </DetailSection>
+
+          {/* ── COMPEX-ONLY: Document Tool CTA ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.115 }}
+              className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl border border-primary-500/20 bg-primary-900/10"
+            >
+              <div>
+                <h3 className="font-bold text-primary-300 flex items-center gap-2 mb-1">
+                  <span>🛠️</span> Document Preparation Tool
+                </h3>
+                <p className="text-dark-300 text-sm">
+                  Need to resize your documents to exact COMPEX specifications?
+                  Use our free browser tools.
+                </p>
+              </div>
+              <Link
+                href="/tools/compex-documents"
+                className="shrink-0 px-5 py-2.5 bg-primary-600/20 hover:bg-primary-600/30 text-primary-300 rounded-xl text-sm font-semibold transition-all duration-200 border border-primary-500/30 text-center"
+              >
+                Go to COMPEX Document Prep Tool
+              </Link>
+            </motion.div>
+          )}
+
+          {/* ── COMPEX-ONLY: Important Dates Table ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <DetailSection title="Important Dates" icon="📅" delay={0.12}>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-dark-700/50">
+                      <th className="text-left text-dark-400 font-semibold pb-3 pr-4">
+                        Event
+                      </th>
+                      <th className="text-left text-dark-400 font-semibold pb-3">
+                        Date
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-dark-800/50">
+                    {[
+                      {
+                        event: "Opening Date for Online Registration",
+                        date: "August 27, 2026",
+                      },
+                      {
+                        event: "Last Date for Online Application Submission",
+                        date: "September 10, 2026 (up to 11:45 PM)",
+                      },
+                      {
+                        event: "Last Date to Deposit Fee at Nepal SBI Bank",
+                        date: "September 14, 2026",
+                      },
+                      {
+                        event: "Last Date to Upload Challan & Final Submission",
+                        date: "September 16, 2026 (up to 11:45 PM)",
+                      },
+                      {
+                        event: "Tentative Exam Date (CBT)",
+                        date: "4th Week of September 2026",
+                      },
+                    ].map((row, i) => (
+                      <tr key={i}>
+                        <td className="text-dark-300 py-3 pr-4">{row.event}</td>
+                        <td className="text-white font-medium py-3">
+                          {row.date}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </DetailSection>
+          )}
+
+          {/* ── COMPEX-ONLY: Apply Now Link ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.13 }}
+              className="p-6 rounded-2xl bg-gradient-to-r from-primary-600/10 to-accent-500/10 border border-primary-500/20 text-center"
+            >
+              <h3 className="font-bold text-lg mb-2 text-primary-300">
+                Ready to Apply?
+              </h3>
+              <a
+                href="https://cdn.digialm.com/EForms/configuredHtml/1258/100577/Index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-105 mt-2 text-white"
+              >
+                Apply Now - Click here
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </motion.div>
+          )}
+
+          {/* ── COMPEX-ONLY: Course-wise Eligibility Matrix ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <DetailSection
+              title="Course-wise Eligibility Matrix"
+              icon="🎯"
+              delay={0.14}
+            >
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-dark-700/50">
+                      <th className="text-left text-dark-400 font-semibold pb-3 pr-3">
+                        Course
+                      </th>
+                      <th className="text-left text-dark-400 font-semibold pb-3 pr-3">
+                        Aggregate Marks
+                      </th>
+                      <th className="text-left text-dark-400 font-semibold pb-3 pr-3">
+                        English Marks
+                      </th>
+                      <th className="text-left text-dark-400 font-semibold pb-3">
+                        Subject Requirements (Class XII)
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-dark-800/50">
+                    {[
+                      {
+                        course: "BE / B.Tech (Engineering)",
+                        aggregate: "60%",
+                        english: "50% in English",
+                        subjects:
+                          "Min. 60% in Physics, Chemistry & Mathematics (PCM)",
+                      },
+                      {
+                        course: "B.Sc. (Agriculture)",
+                        aggregate: "60%",
+                        english: "50% in English",
+                        subjects:
+                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
+                      },
+                      {
+                        course: "B. Pharmacy",
+                        aggregate: "60%",
+                        english: "50% in English",
+                        subjects:
+                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
+                      },
+                      {
+                        course: "B.Sc. (Food Technology)",
+                        aggregate: "60%",
+                        english: "50% in English",
+                        subjects:
+                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
+                      },
+                      {
+                        course: "B.Sc. (Nursing)",
+                        aggregate: "60%",
+                        english: "50% in English",
+                        subjects:
+                          "Min. 55% in Physics, Chemistry & Biology (PCB)",
+                      },
+                    ].map((row, i) => (
+                      <tr key={i}>
+                        <td className="text-white font-medium py-3 pr-3">
+                          {row.course}
+                        </td>
+                        <td className="text-dark-300 py-3 pr-3">
+                          {row.aggregate}
+                        </td>
+                        <td className="text-dark-300 py-3 pr-3">
+                          {row.english}
+                        </td>
+                        <td className="text-dark-300 py-3">{row.subjects}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-4 text-xs text-dark-500 italic border-t border-dark-800/50 pt-3">
+                Note: Class XI marks will not be considered. Age limit is 16 to
+                23 years as on 1 July 2026.
+              </p>
+            </DetailSection>
+          )}
+
+          {/* ── COMPEX-ONLY: Scholarship Seats ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <DetailSection
+              title="COMPEX Scholarship Seats Available 2026-27"
+              icon="💺"
+              delay={0.16}
+            >
+              <p className="text-dark-300 text-sm mb-4">
+                There are {scholarship.seatsAvailable.total} total seats in
+                COMPEX 2026-27. The COMPEX scholarship seats available are
+                distributed across the following courses.
+              </p>
+              <div className="inline-flex items-center gap-3 rounded-xl border border-primary-500/30 bg-primary-500/10 px-4 py-3 mb-5">
+                <span className="text-2xl font-bold text-primary-300">
+                  {scholarship.seatsAvailable.total}
+                </span>
+                <span className="text-sm font-medium text-white">
+                  Total Seats
+                </span>
+              </div>
+              <p className="text-dark-400 text-sm mb-3">
+                Seat distribution by course:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-dark-700/50">
+                      <th className="text-left text-dark-400 font-semibold pb-3 pr-3">
+                        Course
+                      </th>
+                      <th className="text-right text-dark-400 font-semibold pb-3">
+                        Seats
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-dark-800/50">
+                    {scholarship.seatsAvailable.breakdown.map((row) => (
+                      <tr key={row.course}>
+                        <td className="text-white font-medium py-3 pr-3">
+                          {row.course}
+                        </td>
+                        <td className="text-primary-300 font-semibold text-right py-3">
+                          {row.seats}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </DetailSection>
+          )}
+
+          {/* ── COMPEX-ONLY: Exam Syllabus ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <DetailSection
+              title="COMPEX Scholarship Exam Syllabus 2026-27"
+              icon="📚"
+              delay={0.18}
+            >
+              <p className="text-dark-300 text-sm mb-4">
+                Below is the detailed COMPEX scholarship exam syllabus for
+                English, Physics, Chemistry, Mathematics, and Biology, covering
+                all important & frequently asked topics in the CBT exam.
+              </p>
+              <p className="text-xs text-dark-400 mb-5 rounded-lg border border-dark-700/50 bg-dark-800/30 p-3">
+                Mathematics is for Engineering (PCM) applicants, while Biology
+                is for Pharmacy, Agriculture, Food Technology, and Nursing (PCB)
+                applicants.
+              </p>
+              <div className="grid gap-5 md:grid-cols-2">
+                {Object.entries(scholarship.syllabus).map(
+                  ([subject, topics]) => (
+                    <div
+                      key={subject}
+                      className="rounded-xl border border-dark-700/50 bg-dark-800/20 p-4"
+                    >
+                      <h3 className="text-white font-semibold mb-3">
+                        {subject}
+                      </h3>
+                      <ul className="space-y-2">
+                        {topics.map((topic) => (
+                          <li
+                            key={topic}
+                            className="flex items-start gap-3 text-dark-300 text-sm"
+                          >
+                            <span className="w-5 h-5 rounded-full bg-primary-500/10 text-primary-400 flex items-center justify-center flex-shrink-0 text-xs mt-0.5">
+                              ✓
+                            </span>
+                            <span>{topic}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ),
+                )}
+              </div>
+            </DetailSection>
+          )}
+
+          {/* ── COMPEX-ONLY: Exam Pattern & Marks Distribution ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <DetailSection
+              title="Exam Pattern & Marks Distribution"
+              icon="📝"
+              delay={0.2}
+            >
+              <p className="text-dark-300 text-sm mb-4">
+                The COMPEX selection is based on a Computer-Based Test (CBT).
+                The exam consists of Multiple Choice Questions (MCQs) with the
+                following marks distribution:
+              </p>
+              <ul className="space-y-3 mb-4">
+                {[
+                  { subject: "Physics", detail: "30 Questions", icon: "⚡" },
+                  { subject: "Chemistry", detail: "30 Questions", icon: "🧪" },
+                  {
+                    subject: "Mathematics",
+                    detail: "30 Questions (For Engineering candidates)",
+                    icon: "📐",
+                  },
+                  {
+                    subject: "Biology",
+                    detail:
+                      "30 Questions (For Agriculture, Pharmacy, Food Tech, and Nursing candidates)",
+                    icon: "🌿",
+                  },
+                  { subject: "English", detail: "30 Questions", icon: "📖" },
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-dark-300 text-sm"
+                  >
+                    <span className="w-6 h-6 rounded-full bg-primary-500/10 text-primary-400 flex items-center justify-center flex-shrink-0 text-xs mt-0.5">
+                      {item.icon}
+                    </span>
+                    <span>
+                      <span className="text-white font-medium">
+                        {item.subject}:
+                      </span>{" "}
+                      {item.detail}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-dark-500 italic border-t border-dark-800/50 pt-3">
+                Note: Total marks and negative marking details will be provided
+                in the official notification.
+              </p>
+            </DetailSection>
+          )}
+
+          {/* ── COMPEX-ONLY: Free Preparation CTA ── */}
+          {scholarship.slug === "compex-scholarship" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.18 }}
+              className="p-6 sm:p-8 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-900/20 to-teal-900/10 space-y-6"
+            >
+              {/* Practice CTA */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <h3 className="font-bold text-emerald-300 flex items-center gap-2 mb-1">
+                    <span>🎯</span> Free Practice Resources
+                  </h3>
+                  <p className="text-dark-300 text-sm">
+                    Ready to practice? Take our free COMPEX Model Set Questions
+                    and Mock Tests to prepare for the CBT exam.
+                  </p>
+                </div>
+                <Link
+                  href="/compex-practice"
+                  className="shrink-0 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-105 text-center"
+                >
+                  Click here to practice for the COMPEX Exam
+                </Link>
+              </div>
+            </motion.div>
+          )}
 
           {/* Application Steps */}
           <DetailSection title="Application Steps" icon="📝" delay={0.2}>

@@ -86,6 +86,60 @@ export const scholarships = [
       "Must have completed or appearing in Class 12 (10+2 equivalent)",
     ],
 
+    seatsAvailable: {
+      total: 220,
+      breakdown: [
+        { course: "BE / B.Tech (Engineering)", seats: 160 },
+        { course: "B.Sc. Nursing", seats: 15 },
+        { course: "B. Pharmacy", seats: 15 },
+        { course: "B.Sc. Food Technology", seats: 15 },
+        { course: "B.Sc. Agriculture", seats: 15 },
+      ],
+    },
+
+    syllabus: {
+      English: [
+        "Ideas and phrases",
+        "Use of Article",
+        "Active & Passive (voice)",
+        "Tenses",
+        "Grammatical error questions",
+        "Subject verb agreement",
+        "Analogy",
+      ],
+      Physics: [
+        "Semiconductor",
+        "Current Electricity",
+        "Combination of cells",
+        "Magnetic field",
+        "Capacitor & capacitance",
+        "Wave & optics",
+        "Dual nature of light",
+      ],
+      Chemistry: [
+        "Inorganic & Organic chemistry",
+        "Biomolecules",
+        "Chemistry in daily life",
+        "Thermodynamics",
+        "Atomic structure",
+      ],
+      Mathematics: [
+        "Derivatives & Integration",
+        "Integration by parts",
+        "Differential Equations",
+        "Probability",
+        "Permutation & Combination",
+        "Matrix & Determinant",
+        "Sequence & Series",
+      ],
+      Biology: [
+        "Cell Division",
+        "Cell Structure and Function",
+        "Biomolecules",
+        "Biological Classification",
+      ],
+    },
+
     documents: [
       "Class 10 and 12 mark sheets",
       "Citizenship certificate (Nepal)",
