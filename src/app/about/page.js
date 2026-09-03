@@ -24,6 +24,12 @@ const milestones = [
       "After completing my Bachelor's in Computer Science at NIT Rourkela, I began my career as a Software Engineer. Alongside my professional work, I continued creating educational content and supporting students because helping others remained my passion.",
   },
   {
+    year: "Founder & CEO",
+    title: "Founded Career Bato Educational Consultancy Pvt. Ltd.",
+    description:
+      "To give students more personalized, one-on-one support beyond YouTube content, I founded Career Bato Educational Consultancy — a Nepal-based consultancy that helps students find the right college in India, completely free of consultation charges, guiding them from stream selection to final admission.",
+  },
+  {
     year: "Today",
     title: "Building This Platform",
     description:
@@ -111,7 +117,8 @@ export default function AboutPage() {
             <div className="text-center md:text-left">
               <h2 className="text-2xl font-bold mb-1">Prajeet Shah</h2>
               <p className="text-primary-400 text-sm font-medium mb-4">
-                Software Engineer • Scholarship Guide • Content Creator
+                Software Engineer  •  Scholarship Guide  •  Content Creator
+                 <br /> Founder & CEO, Career Bato Educational
               </p>
 
               <p className="text-dark-400 leading-relaxed text-sm">
