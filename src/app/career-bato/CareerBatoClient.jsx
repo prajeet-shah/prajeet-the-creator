@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { careerBatoInfo } from "@/data/careerBato";
 import CareerBatoForm from "@/components/career-bato/CareerBatoForm";
 
@@ -13,6 +13,16 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function CareerBatoClient() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Open modal automatically after 2 seconds on page load
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-dark-950 pt-28 pb-20 relative overflow-hidden animated-gradient grid-bg">
       {/* Decorative blobs */}
@@ -32,23 +42,70 @@ export default function CareerBatoClient() {
           <span className="inline-block text-sm font-semibold text-primary-400 tracking-wider uppercase mb-4 px-4 py-1.5 rounded-full border border-primary-500/25 bg-primary-500/8">
             Career Bato Educational Consultancy Pvt. Ltd.
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-display)] mb-6 leading-tight">
-            {careerBatoInfo.tagline.split("—")[0]}
-            <br />
-            <span className="gradient-text">
-              — {careerBatoInfo.tagline.split("—")[1]?.trim()}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-display)] mb-6 leading-tight flex flex-col items-center">
+            <span>Your Dream College in India</span>
+            <span className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mt-4 text-2xl sm:text-3xl lg:text-4xl gradient-text">
+              <motion.span
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Guided
+              </motion.span>
+              
+              <motion.div className="flex items-center text-primary-500">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <motion.path
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 0.7, ease: "easeOut" }}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </motion.div>
+              
+              <motion.span
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.1 }}
+              >
+                Matched
+              </motion.span>
+              
+              <motion.div className="flex items-center text-primary-500">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <motion.path
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 1.5, ease: "easeOut" }}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </motion.div>
+              
+              <motion.span
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.9 }}
+              >
+                Sorted
+              </motion.span>
             </span>
           </h1>
           <p className="text-dark-300 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
             {careerBatoInfo.intro}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="#apply"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-bold text-sm transition-all duration-200 hover:scale-105 shadow-lg shadow-primary-500/25"
             >
               Apply for Free Guidance 🚀
-            </Link>
+            </button>
             <a
               href="https://wa.me/917061297457"
               target="_blank"
@@ -186,26 +243,53 @@ export default function CareerBatoClient() {
           </div>
         </motion.div>
 
-        {/* ── APPLY FORM ────────────────────────────────────── */}
-        <section id="apply" className="scroll-mt-28">
-          <motion.div {...fadeUp(0)} className="text-center mb-10">
+        {/* ── APPLY FORM CTA ────────────────────────────────────── */}
+        <section id="apply" className="scroll-mt-28 mb-10">
+          <motion.div {...fadeUp(0)} className="text-center max-w-2xl mx-auto glass border border-dark-800/60 rounded-2xl p-8 md:p-12">
             <span className="inline-block text-sm font-semibold text-primary-400 tracking-wider uppercase mb-3">
               Apply Now
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold font-[family-name:var(--font-display)]">
               Start Your <span className="gradient-text">College Journey</span>
             </h2>
-            <p className="text-dark-400 mt-3 max-w-xl mx-auto text-sm">
+            <p className="text-dark-400 mt-3 mb-8 text-sm">
               Fill in the form and our counsellor will reach out within 24–48
               hours. It&apos;s completely free — always.
             </p>
-          </motion.div>
-
-          <motion.div {...fadeUp(0.1)} className="max-w-3xl mx-auto">
-            <CareerBatoForm />
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 rounded-xl font-bold text-sm transition-all duration-200 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white shadow-lg shadow-primary-500/20 hover:scale-[1.02]"
+            >
+              Open Application Form 🚀
+            </button>
           </motion.div>
         </section>
       </div>
+
+      {/* ── MODAL FORM ────────────────────────────────────────── */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm overflow-y-auto pt-20 pb-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-2xl bg-dark-900 border border-dark-800/60 rounded-2xl p-6 sm:p-10 shadow-2xl m-auto"
+            >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 text-dark-400 hover:text-white transition-colors bg-dark-800 hover:bg-dark-700 p-2 rounded-full z-10"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              
+              <CareerBatoForm onClose={() => setIsModalOpen(false)} />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
