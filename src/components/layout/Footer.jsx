@@ -23,6 +23,7 @@ const footerLinks = {
     { label: "Updates & Alerts", href: "/updates" },
     { label: "Document Guidance", href: "/documents" },
     { label: "About", href: "/about" },
+    { label: "Contact Us", href: "/contact" },
     { label: "Privacy Policy", href: "/privacy-policy" },
   ],
   social: [
