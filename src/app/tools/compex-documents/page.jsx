@@ -29,7 +29,7 @@ const DOCUMENT_CONFIG = {
     minSizeKB: COMPEX_PHOTO_SPEC.minSizeKB,
     maxSizeKB: COMPEX_PHOTO_SPEC.maxSizeKB,
     multi: false,
-    tooltip: "Upload one recent passport-size photograph with a white background. The tool creates a JPG/JPEG photo at 120–180 KB, 200 DPI, and 3.5 cm × 4.5 cm (276 × 354 px).",
+    tooltip: "Upload one recent passport-size photograph with a white background (JPG, JPEG, or PNG). The tool creates a JPG/JPEG photo at 120–180 KB, 200 DPI, and 3.5 cm × 4.5 cm (276 × 354 px).",
   },
   signature: {
     label: "Upload your scanned signature:*",
@@ -112,8 +112,8 @@ export default function CompexDocuments() {
     } else {
       const file = selected[0];
       if (key === "photo") {
-        if (!['image/jpeg', 'image/jpg'].includes(file.type)) {
-          setPhotoValidationError("Please choose a JPG or JPEG photo.");
+        if (!['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
+          setPhotoValidationError("Please choose a JPG, JPEG, or PNG photo.");
           event.target.value = "";
           return;
         }
@@ -161,7 +161,7 @@ export default function CompexDocuments() {
     } catch (error) {
       console.error(error);
       URL.revokeObjectURL(photoCrop.imageSrc);
-      setPhotoValidationError("The photo could not be cropped. Please try another JPG/JPEG file.");
+      setPhotoValidationError("The photo could not be cropped. Please try another JPG/JPEG/PNG file.");
       setPhotoCrop(null);
     }
   };
@@ -400,7 +400,7 @@ export default function CompexDocuments() {
                       fileInputs.current[key] = element;
                     }}
                     onChange={(e) => handleFileSelect(key, e)}
-                    accept={key === "photo" ? "image/jpeg,.jpg,.jpeg" : "image/jpeg,image/png,image/jpg,application/pdf"}
+                    accept={key === "photo" ? "image/jpeg,image/png,.jpg,.jpeg,.png" : "image/jpeg,image/png,image/jpg,application/pdf"}
                     multiple={cfg.multi}
                   />
 
